@@ -12,11 +12,11 @@ function Rules() {
     ]
     return (
         <div>
-            { topicNames.map((ele : string , index : number) : [ReactNode] => {
+            {/* { topicNames.map((ele : string , index : number) : [ReactNode] => {
                 <h1 key={index}>
                     {ele}
                 </h1>
-            })}
+            })} */}
         </div>
     )
 }
