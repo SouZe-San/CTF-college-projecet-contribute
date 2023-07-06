@@ -94,6 +94,3 @@ export const Users = [
     ],
   },
 ];
-export function map(arg0) {
-  throw new Error("Function not implemented.");
-}

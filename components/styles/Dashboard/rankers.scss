@@ -1,0 +1,8 @@
+.rank_row {
+    &:hover {
+
+        background: rgb(52, 89, 44);
+    }
+
+    background: linear-gradient(90deg, rgba(52, 89, 44, 0.03) 19%, rgba(34, 84, 34, 0.56) 40%, rgba(23, 205, 27, 0.02) 96%);
+}

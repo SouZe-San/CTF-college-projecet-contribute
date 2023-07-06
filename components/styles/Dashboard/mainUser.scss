@@ -1,0 +1,27 @@
+.user_card {
+    background: rgb(52, 89, 44);
+    background: linear-gradient(0deg, rgb(31, 59, 25) 12%, rgba(36, 163, 36, 0.89) 42%, rgba(37, 148, 40, 0.82) 50%, rgba(27, 145, 30, 0) 80%);
+
+    min-width: 33%;
+    min-height: 19rem;
+
+    .user_avatar {
+
+        font-size: 4rem;
+        font-weight: bold;
+        border: 1px solid;
+        display: inline-block;
+        padding: 0 1rem;
+        border-radius: 10px;
+        // background: #27512F;
+        background: #1F5D2E;
+        color: black;
+    }
+
+    .user_details {
+        span {
+            color: #031517;
+
+        }
+    }
+}
