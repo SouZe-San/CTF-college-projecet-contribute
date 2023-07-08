@@ -1,0 +1,83 @@
+.footerBtns{
+    color: rgb(176, 176, 176);
+    margin-top: .7rem;
+}
+.footerBtn{
+    display: block;
+    color: #888;
+    &:hover{
+        color: white;
+    }
+}
+
+
+.footer{
+    width: 100%;
+    height: 500px;
+    backdrop-filter: blur(17px);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    .footerTitleSection{
+        h1{
+            
+            span{
+                font-size: 4rem;
+                color: white;
+            }
+        }
+    }
+    .footerContentSection{
+        width: 65%;
+        .mailingSection{
+            height: 60%;
+            display: flex;
+            padding: 1rem 1.5rem;
+            justify-content: space-between;
+            background-color: rgba(60, 60, 60, 0.731);
+            border-radius: 2rem;
+            .inputBoxes{
+                width: 80%;
+                height: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                input{
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                    color: white;
+                    font-size: 1.5rem;
+                    &::placeholder{
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+                .specialInput{
+                    display: block;
+                    border: none;
+                    width: 100%;
+                    background-color: transparent;
+                    font-size: 64px;
+                }
+            }
+            .connectButton{
+                display:flex;
+                align-items: flex-end;
+                padding-bottom: 1.3rem;
+                & > *{
+                    border: 1px solid rgba(74, 74, 74, 0.838);
+                    background-color: rgba(27, 180, 27, 0.912);
+                }
+
+            }
+
+        }
+        .socialsSection{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 1.6rem;
+        }
+
+    }
+}
