@@ -9,7 +9,7 @@ import { ChallengesData } from "./assest/allChallenges.js";
 
 const Challenges = () => {
   return (
-    <div className="px-32">
+    <div className="px-32 mt-20">
       <div className="page_header ">
         <h1>Capture The Flag</h1>
         <h4>

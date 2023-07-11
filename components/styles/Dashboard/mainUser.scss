@@ -26,6 +26,17 @@
 //     }
 // }
 
+
+@font-face {
+    font-family: "Redressed";
+    src: url("../../../public/font/Redressed/Redressed-3X6y.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SeldomScene";
+    src: url("../../../public/font/SeldomScene/SeldomScene-B6lG.woff")format("woff");
+}
+
 div.mainUser_div {
     align-items: center;
     margin-top: 2.5rem;
@@ -67,22 +78,51 @@ div.mainUser_div {
 
                 animation: anime 4s infinite;
 
+                h1 {
+
+                    font-family: "Redressed", "Poppins", sans-serif;
+                    font-size: 4rem;
+                    font-style: italic;
+                    color: #ffffffb2;
+                    width: 100%;
+                    text-align: right;
+                    padding: 0 1rem;
+
+                }
+
             }
 
-            svg {
-                width: 8rem;
-                height: auto;
-                transform: rotate(90deg);
-                translate: 1rem -4.3rem;
+            .hexagon {
+                translate: 1rem -4.2rem;
                 position: absolute;
 
+                h1 {
+                    position: absolute;
+                    font-family: "SeldomScene", "Poppins", sans-serif;
+                    top: 2rem;
+                    left: 2rem;
+                    z-index: 1;
+                    font-size: 2.4rem;
+                    padding: 5px 10px;
 
-                polygon {
-                    stroke: #142325;
-                    fill: rgb(9, 38, 74);
-                    // filter: blur(1px);
+                }
+
+                svg {
+                    width: 8rem;
+                    height: auto;
+                    transform: rotate(90deg);
+                    // translate: 1rem -4.3rem;
+                    // position: absolute;
+
+
+                    polygon {
+                        stroke: #142325;
+                        fill: rgb(9, 38, 74);
+                        // filter: blur(1px);
+                    }
                 }
             }
+
 
             .user_details {
                 padding-left: 1.5rem;
@@ -109,6 +149,34 @@ div.mainUser_div {
                     padding-top: 2rem;
                     font-size: 1.6rem;
                     font-weight: 600;
+                    font-family: 'Chakra Petch', sans-serif;
+                }
+
+                .box {
+                    justify-content: space-evenly;
+                    padding-right: 1.6rem;
+
+                    .horizon {
+
+                        rotate: 90deg;
+
+                        hr {
+                            width: 26px;
+                            border: none;
+                            border-top: 2px solid rgba(209, 206, 206, 0.57);
+                        }
+                    }
+
+                    .box_item {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+
+                        p {
+                            font-size: 0.8rem;
+                            color: #737373;
+                            font-weight: 600;
+                        }
+                    }
                 }
 
             }

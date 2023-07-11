@@ -26,9 +26,9 @@ const RankingBlock = () => {
         className="h-[20rem] absolute"
       /> */}
 
-      <h1 className="w-full text-[3rem] font-bold text-center text-green-400  mb-4 px-32 md:pt-8 md:pb-12">
+      {/* <h1 className="w-full text-[3rem] font-bold text-center text-green-400  mb-4 px-32 md:pt-8 md:pb-12">
         The Main RANKING BOARD
-      </h1>
+      </h1> */}
       <h1 className="bg_text">
         C{"  "}T{"  "}F{"\n"} CHAMPIONSHIP
       </h1>
