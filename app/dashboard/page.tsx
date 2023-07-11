@@ -6,7 +6,7 @@ import RankingBlock from '../../components/comps/Dashboard/RankingBlock'
 
 const page = () => {
   return (
-    <div className=''>
+    <div className='mb-8'>
     <NavBar/>
     <RankingBlock/>
     </div>

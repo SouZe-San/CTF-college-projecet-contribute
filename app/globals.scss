@@ -24,55 +24,55 @@ body {
   //     rgb(var(--background-end-rgb))
   //   )
   //   rgb(var(--background-start-rgb));
-//   background-image: linear-gradient(
-//   180deg,
-//   hsl(198deg 40% 10%) 0%,
-//   hsl(189deg 52% 13%) 27%,
-//   hsl(179deg 64% 16%) 42%,
-//   hsl(171deg 75% 20%) 52%,
-//   hsl(168deg 84% 24%) 60%,
-//   hsl(166deg 93% 28%) 67%,
-//   hsl(165deg 98% 32%) 72%,
-//   hsl(164deg 98% 36%) 77%,
-//   hsl(164deg 99% 40%) 82%,
-//   hsl(164deg 98% 46%) 87%,
-//   hsl(164deg 97% 54%) 92%,
-//   hsl(164deg 95% 61%) 100%
-// );
+  //   background-image: linear-gradient(
+  //   180deg,
+  //   hsl(198deg 40% 10%) 0%,
+  //   hsl(189deg 52% 13%) 27%,
+  //   hsl(179deg 64% 16%) 42%,
+  //   hsl(171deg 75% 20%) 52%,
+  //   hsl(168deg 84% 24%) 60%,
+  //   hsl(166deg 93% 28%) 67%,
+  //   hsl(165deg 98% 32%) 72%,
+  //   hsl(164deg 98% 36%) 77%,
+  //   hsl(164deg 99% 40%) 82%,
+  //   hsl(164deg 98% 46%) 87%,
+  //   hsl(164deg 97% 54%) 92%,
+  //   hsl(164deg 95% 61%) 100%
+  // );
 
-//   background: radial-gradient( ellipse farthest-corner at bottom center, 
+  //   background: radial-gradient( ellipse farthest-corner at bottom center, 
 
 
-//   hsl(164deg 95% 61%) 0%,
-//   hsl(164deg 97% 54%) 27%, 
-//   hsl(164deg 98% 46%) 42%, 
-//   hsl(164deg 99% 40%) 52%, 
-//   hsl(164deg 98% 36%) 60%, 
-//   hsl(165deg 98% 32%) 67%, 
-//   hsl(166deg 93% 28%) 70%, 
-//   hsl(168deg 84% 24%) 77%, 
-//   hsl(171deg 75% 20%) 82%,  
-//   hsl(179deg 64% 16%) 87%, 
-//   hsl(189deg 52% 13%) 92%,
-//   hsl(200, 43%, 5%) 100%
+  //   hsl(164deg 95% 61%) 0%,
+  //   hsl(164deg 97% 54%) 27%, 
+  //   hsl(164deg 98% 46%) 42%, 
+  //   hsl(164deg 99% 40%) 52%, 
+  //   hsl(164deg 98% 36%) 60%, 
+  //   hsl(165deg 98% 32%) 67%, 
+  //   hsl(166deg 93% 28%) 70%, 
+  //   hsl(168deg 84% 24%) 77%, 
+  //   hsl(171deg 75% 20%) 82%,  
+  //   hsl(179deg 64% 16%) 87%, 
+  //   hsl(189deg 52% 13%) 92%,
+  //   hsl(200, 43%, 5%) 100%
 
-//   // 20px
+  //   // 20px
 
-//  );
-// }
+  //  );
+  // }
 
-// /*
-// * Created with https://www.css-gradient.com
-// * Gradient link: https://www.css-gradient.com/?c1=b7a3d3&c2=000000&gt=r&gd=dbb
-// */
-// background: #B7A3D3
-// background: radial-gradient(at center bottom, #B7A3D3, #000000)
-// background: radial-gradient(at center bottom, #96ca9a, #000000)
+  // /*
+  // * Created with https://www.css-gradient.com
+  // * Gradient link: https://www.css-gradient.com/?c1=b7a3d3&c2=000000&gt=r&gd=dbb
+  // */
+  // background: #B7A3D3
+  // background: radial-gradient(at center bottom, #B7A3D3, #000000)
+  // background: radial-gradient(at center bottom, #96ca9a, #000000)
   // background: radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#96ca9a 69.27%,#fff 100%);
-  background-color: #031517;
+  background-color: #031315;
   color: white;
   background-image: url("../public/stats.png");
   background-position: 50%;
-  background-size: 1090px;
-  height: 3000px;
+  background-size: cover;
+  height: auto;
 }
