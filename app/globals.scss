@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: "Arame";
+  font-weight: 400;
+  src: url("/public/font/Arame/Arame.woff2") format("woff2")
+      url("/public/font/Arame/Arame.woff") format("woff");
+}
+@font-face {
+  font-family: "Arame";
+  font-weight: 300;
+  src: url("/public/font/Arame/Arame-Thin.woff2") format("woff2")
+      url("/public/font/Arame/Arame-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Arame";
+  font-weight: 600;
+  src: url("/public/font/Arame/ArameMono-Bold.woff2") format("woff2")
+      url("/public/font/Arame/ArameMono-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Mars model";
+  font-weight: 400;
+  src: url("/public/font/Mars-model/MarsModel.woff2") format("woff2")
+      url("/public/font/Mars-model/MarsModel.woff") format("woff");
+}
+@font-face {
+  font-family: "Mars model";
+  font-weight: 600;
+  src: url("/public/font/Mars-model/MarsModel-Bold.woff2") format("woff2")
+      url("/public/font/Mars-model/MarsModel-Bold.woff") format("woff");
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +49,10 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+html{
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -69,10 +108,16 @@ body {
   // background: radial-gradient(at center bottom, #B7A3D3, #000000)
   // background: radial-gradient(at center bottom, #96ca9a, #000000)
   // background: radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#96ca9a 69.27%,#fff 100%);
+<<<<<<< HEAD
   background-color: #031315;
   color: white;
   background-image: url("../public/stats.png");
   background-position: 50%;
   background-size: cover;
   height: auto;
+=======
+  background-color: #121212;
+  // color: white;
+  width: auto;
+>>>>>>> 8885bef424b01a448b83ad0fe72759bed72fe90e
 }
