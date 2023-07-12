@@ -9,4 +9,14 @@
     rotate: -10deg;
     text-align: center;
     color: #0c58624f;
+    translate: 0 -6rem;
+}
+
+
+.rankTable {
+    .horizon {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(164, 164, 164, 0) 0%, rgba(99, 110, 104, 0.86) 50%, rgba(167, 169, 170, 0) 100%);
+    }
 }

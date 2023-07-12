@@ -11,24 +11,7 @@ import { Users } from "./user";
 
 const RankingBlock = () => {
   return (
-    <div className="px-32 flex flex-col items-center">
-      {/* <Image
-        src="/strip.png"
-        alt="this Is Strip"
-        height={500}
-        width={500}
-        style={{
-          top: 0,
-          zIndex: -1,
-          aspectRatio: 1,
-          minWidth: "50%",
-        }}
-        className="h-[20rem] absolute"
-      /> */}
-
-      {/* <h1 className="w-full text-[3rem] font-bold text-center text-green-400  mb-4 px-32 md:pt-8 md:pb-12">
-        The Main RANKING BOARD
-      </h1> */}
+    <div className="md:px-40 px-12 flex flex-col items-center mt-32">
       <h1 className="bg_text">
         C{"  "}T{"  "}F{"\n"} CHAMPIONSHIP
       </h1>
@@ -36,14 +19,17 @@ const RankingBlock = () => {
       <MainUser />
 
       {/* -------- Ranking Table */}
-
-      {/* {Users.sort((curr, next) => curr.rank - next.rank).map((user) => {
-        return (
-          <div key={user.rank}>
-            <Rankers user={user} />
-          </div>
-        );
-      })} */}
+      <div className="rankTable w-full mt-12">
+        {Users.sort((curr, next) => curr.rank - next.rank).map((user) => {
+          return (
+            <div key={user.rank} className="w-full">
+              <Rankers user={user} />
+              <div className="horizon"></div>
+              <div className="horizon mt-[8px]"></div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
