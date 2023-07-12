@@ -1,36 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Chakra+Petch:ital,wght@0,500;0,600;1,600;1,700&family=Kanit:ital,wght@1,400;1,500&family=Montserrat:ital,wght@0,200;0,600;0,800;1,400&family=Open+Sans:ital@0;1&family=Poppins:ital,wght@0,300;0,400;1,500&family=Ysabeau+SC:wght@600;700&display=swap');
+
+
 @font-face {
   font-family: "Arame";
   font-weight: 400;
-  src: url("/public/font/Arame/Arame.woff2") format("woff2")
-      url("/public/font/Arame/Arame.woff") format("woff");
+  src: url("/public/font/Arame/Arame.woff2") format("woff2") url("/public/font/Arame/Arame.woff") format("woff");
 }
+
 @font-face {
   font-family: "Arame";
   font-weight: 300;
-  src: url("/public/font/Arame/Arame-Thin.woff2") format("woff2")
-      url("/public/font/Arame/Arame-Thin.woff") format("woff");
+  src: url("/public/font/Arame/Arame-Thin.woff2") format("woff2") url("/public/font/Arame/Arame-Thin.woff") format("woff");
 }
+
 @font-face {
   font-family: "Arame";
   font-weight: 600;
-  src: url("/public/font/Arame/ArameMono-Bold.woff2") format("woff2")
-      url("/public/font/Arame/ArameMono-Bold.woff") format("woff");
+  src: url("/public/font/Arame/ArameMono-Bold.woff2") format("woff2") url("/public/font/Arame/ArameMono-Bold.woff") format("woff");
 }
+
 @font-face {
   font-family: "Mars model";
   font-weight: 400;
-  src: url("/public/font/Mars-model/MarsModel.woff2") format("woff2")
-      url("/public/font/Mars-model/MarsModel.woff") format("woff");
+  src: url("/public/font/Mars-model/MarsModel.woff2") format("woff2") url("/public/font/Mars-model/MarsModel.woff") format("woff");
 }
+
 @font-face {
   font-family: "Mars model";
   font-weight: 600;
-  src: url("/public/font/Mars-model/MarsModel-Bold.woff2") format("woff2")
-      url("/public/font/Mars-model/MarsModel-Bold.woff") format("woff");
+  src: url("/public/font/Mars-model/MarsModel-Bold.woff2") format("woff2") url("/public/font/Mars-model/MarsModel-Bold.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Redressed";
+  src: url("/public/font/Redressed/Redressed-3X6y.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "SeldomScene";
+  src: url("/public/font/SeldomScene/SeldomScene-B6lG.woff")format("woff");
+}
 
 
 @tailwind base;
@@ -51,7 +63,7 @@
   }
 }
 
-html{
+html {
   font-family: 'Inter', sans-serif;
 }
 
@@ -63,52 +75,55 @@ body {
   //     rgb(var(--background-end-rgb))
   //   )
   //   rgb(var(--background-start-rgb));
-//   background-image: linear-gradient(
-//   180deg,
-//   hsl(198deg 40% 10%) 0%,
-//   hsl(189deg 52% 13%) 27%,
-//   hsl(179deg 64% 16%) 42%,
-//   hsl(171deg 75% 20%) 52%,
-//   hsl(168deg 84% 24%) 60%,
-//   hsl(166deg 93% 28%) 67%,
-//   hsl(165deg 98% 32%) 72%,
-//   hsl(164deg 98% 36%) 77%,
-//   hsl(164deg 99% 40%) 82%,
-//   hsl(164deg 98% 46%) 87%,
-//   hsl(164deg 97% 54%) 92%,
-//   hsl(164deg 95% 61%) 100%
-// );
+  //   background-image: linear-gradient(
+  //   180deg,
+  //   hsl(198deg 40% 10%) 0%,
+  //   hsl(189deg 52% 13%) 27%,
+  //   hsl(179deg 64% 16%) 42%,
+  //   hsl(171deg 75% 20%) 52%,
+  //   hsl(168deg 84% 24%) 60%,
+  //   hsl(166deg 93% 28%) 67%,
+  //   hsl(165deg 98% 32%) 72%,
+  //   hsl(164deg 98% 36%) 77%,
+  //   hsl(164deg 99% 40%) 82%,
+  //   hsl(164deg 98% 46%) 87%,
+  //   hsl(164deg 97% 54%) 92%,
+  //   hsl(164deg 95% 61%) 100%
+  // );
 
-//   background: radial-gradient( ellipse farthest-corner at bottom center, 
+  //   background: radial-gradient( ellipse farthest-corner at bottom center, 
 
 
-//   hsl(164deg 95% 61%) 0%,
-//   hsl(164deg 97% 54%) 27%, 
-//   hsl(164deg 98% 46%) 42%, 
-//   hsl(164deg 99% 40%) 52%, 
-//   hsl(164deg 98% 36%) 60%, 
-//   hsl(165deg 98% 32%) 67%, 
-//   hsl(166deg 93% 28%) 70%, 
-//   hsl(168deg 84% 24%) 77%, 
-//   hsl(171deg 75% 20%) 82%,  
-//   hsl(179deg 64% 16%) 87%, 
-//   hsl(189deg 52% 13%) 92%,
-//   hsl(200, 43%, 5%) 100%
+  //   hsl(164deg 95% 61%) 0%,
+  //   hsl(164deg 97% 54%) 27%, 
+  //   hsl(164deg 98% 46%) 42%, 
+  //   hsl(164deg 99% 40%) 52%, 
+  //   hsl(164deg 98% 36%) 60%, 
+  //   hsl(165deg 98% 32%) 67%, 
+  //   hsl(166deg 93% 28%) 70%, 
+  //   hsl(168deg 84% 24%) 77%, 
+  //   hsl(171deg 75% 20%) 82%,  
+  //   hsl(179deg 64% 16%) 87%, 
+  //   hsl(189deg 52% 13%) 92%,
+  //   hsl(200, 43%, 5%) 100%
 
-//   // 20px
+  //   // 20px
 
-//  );
-// }
+  //  );
+  // }
 
-// /*
-// * Created with https://www.css-gradient.com
-// * Gradient link: https://www.css-gradient.com/?c1=b7a3d3&c2=000000&gt=r&gd=dbb
-// */
-// background: #B7A3D3
-// background: radial-gradient(at center bottom, #B7A3D3, #000000)
-// background: radial-gradient(at center bottom, #96ca9a, #000000)
+  // /*
+  // * Created with https://www.css-gradient.com
+  // * Gradient link: https://www.css-gradient.com/?c1=b7a3d3&c2=000000&gt=r&gd=dbb
+  // */
+  // background: #B7A3D3
+  // background: radial-gradient(at center bottom, #B7A3D3, #000000)
+  // background: radial-gradient(at center bottom, #96ca9a, #000000)
   // background: radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#96ca9a 69.27%,#fff 100%);
-  background-color: #121212;
-  // color: white;
-  width: auto;
+  background-color: #031315;
+  color: white;
+  background-image: url("../public/stats.png");
+  background-position: 50%;
+  background-size: cover;
+  height: auto;
 }

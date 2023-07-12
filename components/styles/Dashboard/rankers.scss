@@ -1,0 +1,49 @@
+.rank_row {
+    background: linear-gradient(90deg, rgba(52, 89, 44, 0.03) 19%, rgba(24, 55, 46, 0.47) 40%, rgba(23, 205, 27, 0.02) 96%);
+    border-radius: 5px;
+    box-shadow: 2px 4px 6px 1px #00000069;
+    margin: 1.5rem 0;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+
+        background: rgba(24, 53, 55, 0.35);
+
+        h1 {
+            scale: 2;
+        }
+
+        h3 {
+            font-style: italic;
+        }
+    }
+
+    h1 {
+        transition: scale 0.2s ease-in;
+        font-family: 'Kanit', 'Montserrat', sans-serif;
+
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            font-size: 1.1rem;
+        }
+    }
+
+    h3 {
+        font-family: 'Chakra Petch', 'Amarante', sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+        transition: all 0.3s ease-in;
+    }
+
+    p {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: "Open Sans", 'Ysabeau SC', sans-serif;
+
+    }
+}

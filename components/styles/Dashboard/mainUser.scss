@@ -1,0 +1,199 @@
+@font-face {
+    font-family: "Redressed";
+    src: url("../../../public/font/Redressed/Redressed-3X6y.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SeldomScene";
+    src: url("../../../public/font/SeldomScene/SeldomScene-B6lG.woff")format("woff");
+}
+
+div.mainUser_div {
+    align-items: center;
+    margin-top: 1.5rem;
+
+    .hunger {
+        width: 12rem;
+        border-bottom: 21px solid black;
+        border-right: 28px solid #0000;
+        border-left: 26px solid transparent;
+    }
+
+    .card_upper_part {
+        width: 20rem;
+        border: 6px solid #071012;
+        height: 23rem;
+        border-radius: 6%;
+        transition: box-shadow 0.2s ease-in-out;
+        background: #ffffff12;
+        // box-shadow: inset 0 0 16px 4px #797979c9;
+        box-shadow: inset 0 0 16px 4px #797979c9, 0px 9px 14px -8px #95959594;
+
+        &:hover {
+            box-shadow: inset 0 0 16px 4px rgba(121, 121, 121, 0.7882352941), 0px 9px 18px -6px rgba(149, 149, 149, 0.77);
+            ;
+
+            .card_inner_part {
+                .user_details {
+                    .score {
+                        box-shadow: -2px 4px 8px 0px rgba(8, 35, 37, 0.9), inset 0 0 5px 3px rgba(12, 45, 64, 0.7215686275);
+                        scale: 1.05;
+                        transform: skew(2deg, 0deg);
+                        border-color: rgba(12, 57, 64, 0.72);
+                    }
+
+                    h2 {
+                        text-shadow: 0px 1px 5px #5fff9e;
+                        scale: 1.01;
+                    }
+
+                    .box {
+                        color: #7bffc8;
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        .card_inner_part {
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(2px);
+            border-radius: 16px;
+
+            .bg {
+                border-top-right-radius: 16px;
+                border-top-left-radius: 16px;
+                background: hsl(173, 100%, 72%);
+                background: linear-gradient(43deg, hsla(173, 100%, 72%, 0.556) 2%, hsla(168, 100%, 58%, 0.739) 23%, rgba(40, 255, 208, 0.778) 46%, hsla(144, 100%, 58%, 0.731) 61%, rgba(146, 255, 21, 0.797) 78%, rgba(244, 255, 30, 0.435) 100%);
+
+                animation: anime 4s infinite;
+
+                h1 {
+
+                    font-family: "Redressed", "Poppins", sans-serif;
+                    font-size: 4rem;
+                    font-style: italic;
+                    color: #ffffffb2;
+                    width: 100%;
+                    text-align: right;
+                    padding: 0 1rem;
+
+                }
+
+            }
+
+            .hexagon {
+                translate: 1rem -4.8rem;
+                position: absolute;
+
+                h1 {
+                    position: absolute;
+                    font-family: "SeldomScene", "Poppins", sans-serif;
+                    top: 2.6rem;
+                    left: 2.4rem;
+                    z-index: 1;
+                    font-size: 2.4rem;
+                    padding: 5px 10px;
+
+                }
+
+                svg {
+                    width: 9rem;
+                    height: auto;
+                    transform: rotate(90deg);
+                    // translate: 1rem -4.3rem;
+                    // position: absolute;
+
+
+                    polygon {
+                        stroke: #142325;
+                        // fill: rgb(9, 38, 74);
+                        fill: rgba(11, 57, 62, 0.99);
+                        // filter: blur(1px);
+                    }
+                }
+            }
+
+
+            .user_details {
+                padding-left: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding-top: 2rem;
+
+
+
+                .score {
+                    display: inline-block;
+                    padding: 3px 13px;
+                    position: absolute;
+                    right: 0;
+                    translate: 0 -21px;
+                    margin-right: 10px;
+                    border-radius: 5px;
+                    background: #03b7ae;
+                    color: black;
+                    border: 1px solid black;
+                    transition: all .2s ease-in;
+                    font-weight: 500;
+
+                    svg {
+                        width: 1.2rem;
+                        margin-right: 3px;
+                        display: inline;
+                    }
+                }
+
+                h2 {
+                    padding-top: 1.5rem;
+                    font-size: 2.3rem;
+                    font-weight: 800;
+                    font-family: 'Chakra Petch', sans-serif;
+                    transition: all .4s ease-in;
+                }
+
+                .box {
+                    justify-content: space-evenly;
+                    padding-right: 1.6rem;
+                    transition: all .4s ease-in;
+                    margin-top: 0.5rem;
+
+                    .horizon {
+
+                        rotate: 90deg;
+
+                        hr {
+                            width: 26px;
+                            border: none;
+                            border-top: 2px solid rgba(209, 206, 206, 0.57);
+                        }
+                    }
+
+                    .box_item {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+
+                        p {
+                            font-size: 0.8rem;
+                            color: #737373;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@keyframes anime {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
