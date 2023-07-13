@@ -1,31 +1,66 @@
 // import React from 'react'
-import { useEffect } from "react";
+"use client";
+import { useEffect, useRef } from "react";
 import NavBar from "./navbar";
-import "@/components/styles/landing-page-styles/herosectionstyles.scss"
-
+import "@/components/styles/landing-page-styles/herosectionstyles.scss";
+import { gsap } from "gsap";
 
 function HeroSection() {
-  useEffect(
-    () => {
-      const gallery = document.getElementById("gallery");
-      const galleryImages = document.querySelectorAll("#gallery img");
-      const numImages = galleryImages.length;
-      const theta = (2 * Math.PI) / numImages;
-      let currImage = 0;
-      setInterval(() => {
-        currImage++;
-        gallery.style.transform = `rotateY(${currImage * -theta}rad)`;
-      }, 4000);
-    },
-    []
-  )
-}
+  // useEffect(
+  //   () => {
+  //     const gallery = document.getElementById("gallery");
+  //     const galleryImages = document.querySelectorAll("#gallery img");
+  //     const numImages = galleryImages.length;
+  //     const theta = (2 * Math.PI) / numImages;
+  //     let currImage = 0;
+  //     setInterval(() => {
+  //       currImage++;
+  //       gallery.style.transform = `rotateY(${currImage * -theta}rad)`;
+  //     }, 4000);
+  //   },
+  //   []
+  // )
 
+  const galleryRef = useRef(null);
+  let mouseX,
+    mouseY,
+    posPerX,
+    posPerY = 0;
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+    console.log(mouseX, mouseY);
+    posPerX = mouseX / window.innerWidth;
+    posPerY = mouseY / window.innerHeight;
+    console.log(posPerX, posPerY);
+
+    // const maxX = galleryRef.offsetWidth - window.innerWidth,
+      // maxY = galleryRef.offsetHeight - window.innerHeight;
+
+    // const panX = maxX * posPerX * -1,
+    //   panY = maxY * posPerY * -1;
+
+    // galleryRef.animate(
+    //   {
+    //     transform: `translate(${panX}px, ${panY}px)`,
+    //   },
+    //   {
+    //     duration: 4000,
+    //     fill: "forwards",
+    //     easing: "ease",
+    //   }
+    // );
+  });
+  // useEffect(() => {
+  //   galleryRef.current.to({})
+  // }, [
+  //   galleryRef
+  // ])
 
   return (
     <div className="heroSection" id="HeroSection">
       <NavBar />
-      <div id="gallery">
+      <div id="gallery" ref={galleryRef}>
         <div className="tile">
           <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />
         </div>
@@ -54,9 +89,7 @@ function HeroSection() {
           <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tJTIwb2JqZWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=70" />
         </div>
       </div>
-
     </div>
   );
 }
-
 export default HeroSection;

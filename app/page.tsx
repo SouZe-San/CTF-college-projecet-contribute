@@ -9,9 +9,9 @@ import Branding from "@/components/comps/landing-page-comps/branding"
 export default function Home() {
   return (
     <main className="">
-        {/* <HeroSection/> */}
-        <Timer/>
-        <Topics/>
+        <HeroSection/>
+        {/* <Timer/> */}
+        {/* <Topics/> */}
         {/* <Rules/> */}
         {/* <Footer/> */}
         {/* <Branding/> */}
