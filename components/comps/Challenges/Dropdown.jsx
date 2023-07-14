@@ -97,7 +97,7 @@ const Dropdown = ({ dropdownRef, challenge }) => {
                 //   setQuestionBody(e.target.value);
                 // }}
                 // cols="30"
-                // rows="3"
+                rows="1"
                 // onKeyPress={handleEnter}
               ></textarea>
             </label>

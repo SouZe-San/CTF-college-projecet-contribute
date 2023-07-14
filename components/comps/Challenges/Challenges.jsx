@@ -9,7 +9,7 @@ import { ChallengesData } from "./assest/allChallenges.js";
 
 const Challenges = () => {
   return (
-    <div className="px-32 mt-20">
+    <div className="px-32 mt-24">
       <div className="page_header ">
         <h1>Capture The Flag</h1>
         <h4>
@@ -18,7 +18,7 @@ const Challenges = () => {
         </h4>
       </div>
 
-      <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2">
+      <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2 md:mt-8">
         {ChallengesData.map((challenge, index) => {
           return (
             <div key={index}>
