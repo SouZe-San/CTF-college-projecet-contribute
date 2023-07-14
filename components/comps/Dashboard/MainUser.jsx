@@ -1,11 +1,44 @@
-import React from "react";
-
+import React, { useLayoutEffect, useRef } from "react";
+// import { gsap } from "gsap";
+import gsap from "gsap";
 // Stylesheet
 import "../../styles/Dashboard/mainUser.scss";
 
 const MainUser = () => {
+  const mainUserRef = useRef();
+  const teamNameRef = useRef();
+
+  // Welcome Animation
+  const tl = gsap.timeline({ paused: true });
+  useLayoutEffect(() => {
+    tl.from(mainUserRef.current, {
+      scale: 0,
+      opacity: 0,
+      duration: 1,
+    })
+      .to(teamNameRef.current, {
+        opacity: 1,
+        y: 0,
+      })
+      .from(".box_item", {
+        y: 50,
+        opacity: 0,
+        stagger: {
+          each: 0.2,
+          from: "center",
+        },
+      });
+
+    tl.play();
+  }, [tl]);
+
   return (
-    <div className="w-full flex justify-center flex-col mainUser_div">
+    <div
+      className="w-full flex justify-center flex-col mainUser_div"
+      data-scroll
+      data-scroll-speed="0.8"
+      ref={mainUserRef}
+    >
       {/* -------- NEW STYLE ----------- */}
       <div className="hunger"></div>
       <div className="card_upper_part">
@@ -24,7 +57,7 @@ const MainUser = () => {
               <polygon
                 points="100,20 150,50 150,110 100,140 50,110 50,50"
                 fill="none"
-                stroke-width="15"
+                strokeWidth="15"
               />
             </svg>
           </div>
@@ -36,7 +69,7 @@ const MainUser = () => {
               </svg>
               445
             </div>
-            <h2>Elf Kingdom</h2>
+            <h2 ref={teamNameRef}>Elf Kingdom</h2>
 
             <div className="box flex items-center">
               <div className="flag_num box_item text-center">
