@@ -17,7 +17,6 @@ const ChallengeItem = ({ length, index, challenge }) => {
 
   //   DropDown Animation
   const tl = gsap.timeline({ paused: true });
-
   useEffect(() => {
     tl.fromTo(
       dropdownRef.current,
@@ -41,6 +40,7 @@ const ChallengeItem = ({ length, index, challenge }) => {
     }
   }, [tl]);
 
+  // Color Added according by difficulties
   useEffect(() => {
     if (challenge.difficulty == "easy") {
       setStyleLevel({
@@ -57,7 +57,7 @@ const ChallengeItem = ({ length, index, challenge }) => {
     }
   }, [challenge.difficulty]);
 
-  //  Details OnClick Func
+  //  Dropdown Function Working Function
   const dropdownShow = (e) => {
     e.preventDefault();
     setIsDropdown(!isDropdown);
@@ -73,7 +73,7 @@ const ChallengeItem = ({ length, index, challenge }) => {
         <h1 className="flag_name">
           <span> {index + 1}. </span> {challenge.name}
         </h1>
-        <div className="flag_type flex items-center"> # {challenge.type}</div>
+        <div className="flag_type flex items-center"> # {challenge.category}</div>
         <div className="flag_difficulty flex items-center justify-center" style={styleLevel}>
           {challenge.difficulty[0].toUpperCase() + challenge.difficulty.substr(1)}
         </div>

@@ -9,8 +9,8 @@ const MainUser = () => {
   const teamNameRef = useRef();
 
   // Welcome Animation
-  const tl = gsap.timeline({ paused: true });
   useLayoutEffect(() => {
+    const tl = gsap.timeline({ paused: true });
     tl.from(mainUserRef.current, {
       scale: 0,
       opacity: 0,
@@ -30,7 +30,7 @@ const MainUser = () => {
       });
 
     tl.play();
-  }, [tl]);
+  }, []);
 
   return (
     <div
