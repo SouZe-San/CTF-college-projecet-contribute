@@ -1,4 +1,7 @@
-import "@/components/styles/landing-page-styles/navbar.scss";
+// import "@/components/landing-page-comps/navigationBar/navbar.scss"
+
+import "./navbar.scss"
+
 function NavBar() {
   return (
     <nav className="text-white">

@@ -1,4 +1,4 @@
-import "@/components/styles/landing-page-styles/rulesSectionStyles.scss"
+import "@/components/landing-page-comps/gameRules/rulesSectionStyles.scss"
 
 function Rules() {
   

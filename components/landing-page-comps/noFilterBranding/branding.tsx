@@ -1,4 +1,4 @@
-import "@/components/styles/landing-page-styles/brandingBarStyles.scss"
+import "./brandingBarStyles.scss"
 
 const Branding = () =>{
     return (

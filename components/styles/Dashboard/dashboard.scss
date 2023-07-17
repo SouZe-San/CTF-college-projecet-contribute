@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Chakra+Petch:ital,wght@1,600;1,700&family=Kanit:ital,wght@1,400;1,500&family=Montserrat:ital,wght@0,200;0,600;0,800;1,400&family=Open+Sans:ital@0;1&family=Poppins:ital,wght@0,300;0,400;1,500&family=Ysabeau+SC:wght@600;700&display=swap');
+
+.bg_text {
+    font-size: 10rem;
+    position: absolute;
+    z-index: -2;
+    font-weight: 700;
+    font-family: "Chakra Petch", sans-serif;
+    rotate: -10deg;
+    text-align: center;
+    color: #0c58624f;
+    translate: 0 -6rem;
+}
+
+
+.rankTable {
+    .horizon {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(164, 164, 164, 0) 0%, rgba(99, 110, 104, 0.86) 50%, rgba(167, 169, 170, 0) 100%);
+    }
+}

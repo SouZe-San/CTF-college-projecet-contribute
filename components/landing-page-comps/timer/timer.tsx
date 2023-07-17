@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import "@/components/styles/landing-page-styles/timerLogicStyles.scss";
+import "@/components/landing-page-comps/timer/timerSectionStyles.scss"
+import "@/components/landing-page-comps/timer/timerLogicStyles.scss"
 
 const Timer = () => (
   <div className="timerContainer">

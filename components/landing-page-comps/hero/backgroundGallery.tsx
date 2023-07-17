@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef, FC } from "react";
-import "@/components/styles/landing-page-styles/backgroundGalleryStyles.scss";
+import "@/components/landing-page-comps/hero/backgroundGalleryStyles.scss"
 
 const BackgroundGallery = forwardRef(({}, ref : React.Ref<HTMLDivElement>) => {
   return (

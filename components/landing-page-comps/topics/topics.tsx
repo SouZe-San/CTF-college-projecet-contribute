@@ -11,7 +11,7 @@ import img03 from "@/public/topic-images/image-number-three.webp";
 import img04 from "@/public/topic-images/image-number-four.jpg";
 import img05 from "@/public/topic-images/image-number-five.webp";
 
-import "@/components/styles/landing-page-styles/topicSectionStyles.scss";
+import "@/components/landing-page-comps/topics/topicSectionStyles.scss"
 
 let number = 0;
 const topicNames = [
@@ -113,7 +113,7 @@ function Rules() {
         yMoveContainer(pageY);
       });
     }
-  }, []);
+  }, [isHovered]);
 
   function mouseEnterInteraction(index: number) {
     setIsHovered({ active: true, idx: index });
@@ -212,7 +212,7 @@ function Rules() {
                 setIsHovered({ active: false, idx: index });
               }}
               key={index}
-              className="topicWrapper"
+              className="topicWrapper "
             >
               <div className="topicName">{topicName}</div> 
               <div className="topicId">(00{index + 1})</div> 

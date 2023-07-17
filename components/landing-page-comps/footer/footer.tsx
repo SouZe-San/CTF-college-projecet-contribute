@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "@/components/styles/landing-page-styles/footerSectionStyles.scss";
+import "@/components/landing-page-comps/footer/footerSectionStyles.scss"
 import facebookImg from "@/public/socials-svg/social-facebook.svg";
 import twitterImg from "@/public/socials-svg/social-twitter.svg";
 import linkedInImg from "@/public/socials-svg/social-linkedin.svg";
