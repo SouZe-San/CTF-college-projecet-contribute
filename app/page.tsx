@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import HeroSection from '@/components/comps/landing-page-comps/herosection'
 import Footer from "@/components/comps/landing-page-comps/footer"
+import Timer from '@/components/comps/landing-page-comps/timer'
+import Topics from '@/components/comps/landing-page-comps/topics'
 import Rules from '@/components/comps/landing-page-comps/rules'
 import Branding from "@/components/comps/landing-page-comps/branding"
 export default function Home() {
@@ -9,7 +11,9 @@ export default function Home() {
 
     
     <main className="">
-      <HeroSection></HeroSection>
+        <HeroSection/>
+        <Timer/>
+        <Topics/>
         <Rules/>
         <Footer/>
         <Branding/>
