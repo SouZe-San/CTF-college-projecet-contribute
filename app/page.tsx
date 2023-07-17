@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <main className="">
         <HeroSection/>
-        {/* <Timer/> */}
-        {/* <Topics/> */}
-        {/* <Rules/> */}
-        {/* <Footer/> */}
-        {/* <Branding/> */}
+        <Timer/>
+        <Topics/ >
+        <Rules/>
+        <Footer/>
+        <Branding/> 
     </main>
   )
 }

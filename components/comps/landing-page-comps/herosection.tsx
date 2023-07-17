@@ -4,90 +4,96 @@ import { useEffect, useRef } from "react";
 import NavBar from "./navbar";
 import "@/components/styles/landing-page-styles/herosectionstyles.scss";
 import { gsap } from "gsap";
+import BackgroundGallery from "./backgroundGallery";
+
+
+let number = 0
 
 function HeroSection() {
-  // useEffect(
-  //   () => {
-  //     const gallery = document.getElementById("gallery");
-  //     const galleryImages = document.querySelectorAll("#gallery img");
-  //     const numImages = galleryImages.length;
-  //     const theta = (2 * Math.PI) / numImages;
-  //     let currImage = 0;
-  //     setInterval(() => {
-  //       currImage++;
-  //       gallery.style.transform = `rotateY(${currImage * -theta}rad)`;
-  //     }, 4000);
-  //   },
-  //   []
-  // )
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const mouseX = useRef(0);
+  const mouseY = useRef(0);
+  const posPerX = useRef(0);
+  const posPerY = useRef(0);
+  const panX = useRef(0);
+  const panY = useRef(0);
 
-  const galleryRef = useRef(null);
-  let mouseX,
-    mouseY,
-    posPerX,
-    posPerY = 0;
-  window.addEventListener("mousemove", (e) => {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
-    console.log(mouseX, mouseY);
-    posPerX = mouseX / window.innerWidth;
-    posPerY = mouseY / window.innerHeight;
-    console.log(posPerX, posPerY);
+  number++
+  console.log("I have been re rendered" , number ,"times")
 
-    // const maxX = galleryRef.offsetWidth - window.innerWidth,
-      // maxY = galleryRef.offsetHeight - window.innerHeight;
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.current = e.pageX;
+      mouseY.current = e.pageY;
+      posPerX.current = mouseX.current / window.innerWidth;
+      posPerY.current = mouseY.current / window.innerHeight;
+    };
 
-    // const panX = maxX * posPerX * -1,
-    //   panY = maxY * posPerY * -1;
+    window.addEventListener("mousemove", handleMouseMove);
 
-    // galleryRef.animate(
-    //   {
-    //     transform: `translate(${panX}px, ${panY}px)`,
-    //   },
-    //   {
-    //     duration: 4000,
-    //     fill: "forwards",
-    //     easing: "ease",
-    //   }
-    // );
-  });
-  // useEffect(() => {
-  //   galleryRef.current.to({})
-  // }, [
-  //   galleryRef
-  // ])
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
+  useEffect(() => {
+    const handleAnotherMouseMove = () => {
+    if (galleryRef.current) {
+      const maxX = galleryRef.current.offsetWidth - window.innerWidth;
+      const maxY = galleryRef.current.offsetHeight - window.innerHeight;
+      panX.current = maxX * posPerX.current * -1;
+      panY.current = maxY * posPerY.current * -1;
+      if ((mouseX.current <= window.innerWidth ) && (mouseY.current <= window.innerHeight)){
+        gsap.to(galleryRef.current, {
+          x: panX.current,
+          y: panY.current,
+          duration: .6,
+          ease: "power2.out",
+        });
+      }
+      
+    }
+  }
+    window.addEventListener("mousemove", handleAnotherMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleAnotherMouseMove);
+    };
+
+  }, []);
   return (
     <div className="heroSection" id="HeroSection">
-      <NavBar />
-      <div id="gallery" ref={galleryRef}>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />
+      {/* <NavBar /> */}
+      <BackgroundGallery ref={galleryRef} />
+      <div className="overlay">
+        <div className="overlayContent">
+          {/* <h1>Hi, I'm Rishabh</h1> */}
+          <h2>Full Stack Developer</h2>
+          <p>
+            I am a full stack developer with a passion for building beautiful
+            and functional websites. I am currently pursuing my B.Tech in
+            Computer Science from VIT, Vellore.
+          </p>
+          <div className="socialLinks">
+            <a href="https://www.linkedin.com/in/rishabh-raj-2a1b3b1a0/">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="
+            https://github.com/Rishabhr96?tab=repositories&q=&
+            type=&language=&sort="
+            >
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/rishabhr96/">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/rishabh.raj.96/">
+              <i className="fab fa-facebook"></i>
+            </a>
+          </div>
         </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsdWV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1587590227264-0ac64ce63ce8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwb2JqZWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1520121401995-928cd50d4e27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JlZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHVycGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1520338258525-606b90f95b04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGRhcmslMjBibHVlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1521127474489-d524412fd439?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />
-        </div>
-        <div className="tile">
-          <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tJTIwb2JqZWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=70" />
-        </div>
+        bBackgroundGallery
       </div>
     </div>
   );

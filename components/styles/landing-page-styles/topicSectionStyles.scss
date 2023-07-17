@@ -1,10 +1,12 @@
 .topicsSection{
     width: 100%;
     color: white;
+    font-size: 50px;
     .topicContainer{
         width: 80%;
         margin: 0 auto;
         position: relative;
+        overflow: hidden;
         .marqueeContainer{
             position: absolute;
             opacity: 0;
@@ -25,30 +27,78 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
-            background-color: #41C77F ;
-            border-radius: 2rem;
+            padding: 10px 5%;
             margin-bottom: 4px ;
             font-family: "Arame";
-            color: black;
-            .numberId{
-                font-size: 12px;
+            overflow-x:hidden;
+            gap: 1rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+            border-bottom: 1px solid rgba(177, 177, 177, 0.449);
+            &:hover .topicId {
+                transform: translateX(15px);
             }
-            .rule{
-                font-size: 1.2rem;
-                font-weight: 600;
+            &:hover .topicName {
+               
+                color: white;
+                transform: translateX(-10px);
             }
-            .arrowSvg{
-                background-color: black;
-                border-radius: 50%;
-                transform: rotate(-30deg);
+
+            .topicId{
+                font-size: 2rem;
+                transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+            }
+            .topicName{
+                // font-weight: 600;
+                -webkit-text-stroke: 1px;
+                -webkit-text-stroke-color: rgba(255, 255, 255, 0.819);
+                color: transparent;
+                transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
             }
         
         }
     }
+    .imageContainer{
+        pointer-events: none;
+        border: 1px solid white;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
+        z-index: -1;
+        .someThing{
+            display: flex;
+            position: inherit;
+            transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+            .imageWrapper{
+                width : 200px ;
+                overflow: hidden;
+            }
+        }
+        
+    }
 }
 
-@keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+
+
+@media (max-width : 680px) {
+    .topicsSection{
+        font-size: 2rem;
+        .topicContainer{
+            .topicWrapper{
+                left: 0;
+                .topicId{
+                    display: none;
+                }
+                .topicName{
+                    color: white;
+                    span{
+                        display: none;
+                    }
+                }
+
+            }
+        }
+    }
 }
