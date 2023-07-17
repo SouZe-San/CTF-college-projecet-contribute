@@ -10,14 +10,21 @@ const Dropdown = ({ dropdownRef, challenge }) => {
   const [connString, setConnString] = useState("");
   const [point, setPoint] = useState(10);
 
+  // Function For spawn
+
   // Spawn Timer For 30 minuit
   useEffect(() => {
     const timerDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
     if (isStart) {
-      setTimeout(() => {
+      const spawnTimer = setTimeout(() => {
         setConnString("");
         setIsStart(false);
+        console.log("Timer Done");
       }, timerDuration);
+
+      return () => {
+        clearInterval(spawnTimer);
+      };
     } else {
       setConnString("");
     }
@@ -80,7 +87,7 @@ const Dropdown = ({ dropdownRef, challenge }) => {
                   </>
                 )}
               </button>
-              {isStart ? <Timer /> : "00:00"}
+              <div className="timer_section">{isStart ? <Timer /> : "00:00"}</div>
             </>
           )}
         </div>

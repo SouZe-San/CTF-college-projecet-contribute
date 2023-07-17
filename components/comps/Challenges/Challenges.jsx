@@ -1,18 +1,24 @@
 "use client";
 
 import React, { useState } from "react";
+
 import ChallengeItem from "./ChallengeItem";
 
 // Stylesheet
 import "../../styles/challenges/challengeBlock.scss";
 
 // Data
-import { ChallengesArray } from "./assest/allChallenges.js";
+// import { ChallengesArray } from "./assest/allChallenges.js";
 
-const Challenges = () => {
-  const originalData = [...ChallengesArray];
+const Challenges = ({ allChallenges }) => {
+  // const [isLoading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  // ^Fetch Data from API
+  const originalData = [...allChallenges];
 
   // State Variables
+
   const [ChallengesData, setChallengesData] = useState(originalData);
   const [isSortByLevel, setIsSortByLevel] = useState(false);
   const [isSortByType, setIsSortByType] = useState(false);
@@ -92,13 +98,17 @@ const Challenges = () => {
       </div>
 
       <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2 mt-2">
-        {ChallengesData.map((challenge, index) => {
-          return (
-            <div key={index}>
-              <ChallengeItem challenge={challenge} length={ChallengesData.length} index={index} />
-            </div>
-          );
-        })}
+        {!ChallengesData ? (
+          <>Wait A Moment</>
+        ) : (
+          ChallengesData.map((challenge, index) => {
+            return (
+              <div key={index}>
+                <ChallengeItem challenge={challenge} length={ChallengesData.length} index={index} />
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

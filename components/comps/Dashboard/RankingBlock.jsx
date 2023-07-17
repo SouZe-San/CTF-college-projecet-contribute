@@ -13,7 +13,6 @@ import "../../styles/Dashboard/dashboard.scss";
 
 // Data
 import { Users } from "./user";
-import Branding from "../landing-page-comps/branding";
 
 const RankingBlock = () => {
   const rankRow = useRef([]);
@@ -59,8 +58,6 @@ const RankingBlock = () => {
           })}
         </div>
       </div>
-      {/* ---- Footer  ----- */}
-      <Branding />
     </>
   );
 };

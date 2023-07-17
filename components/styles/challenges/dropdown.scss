@@ -7,9 +7,9 @@
     opacity: 0;
     display: none;
 
-    // .DropDown_headline {
-    //     font-family: 'Tektur', cursive;
-    // }
+    .DropDown_headline {
+        font-family: 'Open Sans', sans-serif;
+    }
 
     .about {
 
@@ -39,6 +39,11 @@
                 svg {
                     width: 1.3rem;
                 }
+            }
+
+            .timer_section {
+                font-family: 'Roboto Mono', monospace;
+                font-weight: 500;
             }
         }
     }
@@ -127,7 +132,7 @@
 
     .textarea {
         h2 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             text-transform: capitalize;
             padding: 0.5rem 0;
             font-weight: 600;
@@ -145,6 +150,8 @@
                     color: black;
                     border-radius: 10px;
                     outline: none;
+                    font-weight: 300;
+                    font-style: italic;
                 }
             }
 
