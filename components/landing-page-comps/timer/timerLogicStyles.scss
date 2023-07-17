@@ -1,0 +1,57 @@
+
+.timerContainer{
+  width: 50%;
+  margin: 2rem auto;
+  text-align: center;
+  .timerWrapper{
+    .header{
+      font-family: 'Arame', sans-serif;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 700px ){
+  .timerContainer{
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.timer{
+  // width: 80%;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1.2rem 2.2rem;
+  margin: 10px;
+  background-color: #121212;
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Arame', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px ){
+  .timer{
+    width: 100%;
+    font-size: .9rem;
+    padding: .4 .3rem;
+    margin: 0;
+    gap: 1rem;
+  }
+}
+
