@@ -11,9 +11,6 @@ import "../../styles/challenges/challengeBlock.scss";
 // import { ChallengesArray } from "./assest/allChallenges.js";
 
 const Challenges = ({ allChallenges }) => {
-  // const [isLoading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
-
   // ^Fetch Data from API
   const originalData = [...allChallenges];
 

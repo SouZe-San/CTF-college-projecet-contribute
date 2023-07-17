@@ -22,8 +22,6 @@ const page =async () => {
 // Get All Data
   const allChallenges = await getChallenges()
 
-
-
   return (
     <div  className='md:mx-12'>
 
