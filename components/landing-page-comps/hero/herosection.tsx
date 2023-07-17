@@ -1,8 +1,7 @@
 // import React from 'react'
 "use client";
 import { useEffect, useRef } from "react";
-import NavBar from "./navbar";
-import "@/components/styles/landing-page-styles/herosectionstyles.scss";
+import "@/components/landing-page-comps/hero/heroSectionStyles.scss"
 import { gsap } from "gsap";
 import BackgroundGallery from "./backgroundGallery";
 

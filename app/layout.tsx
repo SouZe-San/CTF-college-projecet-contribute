@@ -1,6 +1,6 @@
 import './globals.scss'
 import { Inter } from 'next/font/google'
-import NavBar from '@/components/comps/landing-page-comps/navbar'
+import NavBar from '@/components/landing-page-comps/navigationBar/navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
