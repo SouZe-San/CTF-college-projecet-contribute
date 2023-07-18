@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div  className='md:mx-12 mb-8'>
 
-      <NavBar/>
+      {/* <NavBar/> */}
       <Challenges/>
     </div>
   )

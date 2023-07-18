@@ -1,5 +1,5 @@
 // import "@/components/styles/landing-page-styles/navbar.scss"
-import "../../styles/landing-page-styles/navbar.scss"
+// import "../../styles/landing-page-styles/navbar.scss"
 function NavBar() {
     return (
       <nav className="text-white">

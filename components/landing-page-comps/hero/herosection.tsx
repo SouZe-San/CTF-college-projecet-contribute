@@ -1,12 +1,11 @@
-// import React from 'react'
 "use client";
-import { useEffect, useRef } from "react";
-import "@/components/landing-page-comps/hero/heroSectionStyles.scss"
 import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 import BackgroundGallery from "./backgroundGallery";
+import "@/components/landing-page-comps/hero/heroSectionStyles.scss"
 
 
-let number = 0
+let number = 0 // !remove it when goes to the build 
 
 function HeroSection() {
   const galleryRef = useRef<HTMLDivElement>(null);
