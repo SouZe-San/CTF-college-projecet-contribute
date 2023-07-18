@@ -3,17 +3,45 @@
     padding-bottom: 2rem;
 
     h1 {
-        font-size: 3.3rem;
+        font-size: 4.3rem;
         font-weight: bolder;
         padding-bottom: 0.5rem;
         color: #78F251;
         text-shadow: 2px 4px 13px #469236;
-        // font-family: 'Amarante', cursive;
         font-family: 'Kanit', sans-serif;
-        // font-family: 'Ysabeau SC', sans-serif
     }
 
     h4 {
         color: #618855;
+    }
+}
+
+.sorting {
+    .sort_btn {
+        border: 1px solid rgb(84, 172, 33);
+        padding: 5px 1rem;
+        margin: 0 0.5rem;
+        border-radius: 20px;
+        transition: all 0.2s ease-in-out;
+
+
+        svg {
+            width: 1.1rem;
+            display: inline;
+        }
+
+        &:hover {
+            background: #2d5d2d;
+            color: black;
+            font-weight: 600;
+            box-shadow: inset 0 0 10px #000000;
+            // border: none;
+
+            svg {
+                path {
+                    fill: black;
+                }
+            }
+        }
     }
 }
