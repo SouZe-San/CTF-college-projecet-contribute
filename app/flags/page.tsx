@@ -26,6 +26,7 @@ const page =async () => {
   return (
     <div  className='md:mx-12'>
 
+
       <Challenges allChallenges={allChallenges} />
       <Branding />
     </div>

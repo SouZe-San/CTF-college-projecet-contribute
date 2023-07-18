@@ -12,7 +12,7 @@ function NavBar() {
         <div className="menu">
           <ul>
             <li>
-              <a href="#HeroSection">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
               <a href="#RewardsSection">Rewards</a>
@@ -24,7 +24,7 @@ function NavBar() {
               <a href="#RulesSection">Rules</a>
             </li>
             <li>
-              <a href="/">Profile</a>
+              <a href="/dashboard">Profile</a>
             </li>
             
           </ul>
