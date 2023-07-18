@@ -2,7 +2,8 @@ import React,{useEffect, useState} from 'react'
 
 
 import Challenges from '../../components/comps/Challenges/Challenges'
-import Branding from '@/components/comps/landing-page-comps/branding'
+import Branding from '@/components/landing-page-comps/noFilterBranding/branding'
+
 
 const getChallenges = async () => {
   const URL ="https://fuku-api-specs.netlify.app/challenges"

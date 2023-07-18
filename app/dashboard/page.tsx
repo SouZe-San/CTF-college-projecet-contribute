@@ -1,7 +1,7 @@
 import React from 'react'
 
 import RankingBlock from '../../components/comps/Dashboard/RankingBlock'
-import Branding from '@/components/comps/landing-page-comps/branding'
+import Branding from '@/components/landing-page-comps/noFilterBranding/branding'
 
 
 const geSore = async () => {
