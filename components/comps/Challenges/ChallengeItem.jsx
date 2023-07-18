@@ -12,11 +12,11 @@ import "../../styles/challenges/challenges.scss";
 const ChallengeItem = ({ length, index, challenge }) => {
   //  Variables
   const [isDropdown, setIsDropdown] = useState(false);
+  const [styleLevel, setStyleLevel] = useState({});
   const dropdownRef = useRef(null);
 
   //   DropDown Animation
   const tl = gsap.timeline({ paused: true });
-
   useEffect(() => {
     tl.fromTo(
       dropdownRef.current,
@@ -40,7 +40,24 @@ const ChallengeItem = ({ length, index, challenge }) => {
     }
   }, [tl]);
 
-  //  Details OnClick Func
+  // Color Added according by difficulties
+  useEffect(() => {
+    if (challenge.difficulty == "easy") {
+      setStyleLevel({
+        color: "#5be296",
+      });
+    } else if (challenge.difficulty == "hard") {
+      setStyleLevel({
+        color: "#ffaa4f",
+      });
+    } else {
+      setStyleLevel({
+        color: "#fb0248",
+      });
+    }
+  }, [challenge.difficulty]);
+
+  //  Dropdown Function Working Function
   const dropdownShow = (e) => {
     e.preventDefault();
     setIsDropdown(!isDropdown);
@@ -53,13 +70,12 @@ const ChallengeItem = ({ length, index, challenge }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="flag_row grid grid-cols-4 content-center w-full">
-        {/* <div className="flag_row flex justify-between items-center w-full"> */}
         <h1 className="flag_name">
-          {index + 1}. {"  "} {challenge.name}
+          <span> {index + 1}. </span> {challenge.name}
         </h1>
-        <div className="flag_type flex items-center">Type: #{challenge.type}</div>
-        <div className="flag_difficulty flex items-center justify-center">
-          Level: {challenge.difficulty[0].toUpperCase() + challenge.difficulty.substr(1)}
+        <div className="flag_type flex items-center"> # {challenge.category}</div>
+        <div className="flag_difficulty flex items-center justify-center" style={styleLevel}>
+          {challenge.difficulty[0].toUpperCase() + challenge.difficulty.substr(1)}
         </div>
         <button
           onClick={dropdownShow}
@@ -78,7 +94,8 @@ const ChallengeItem = ({ length, index, challenge }) => {
         </button>
       </div>
       <Dropdown dropdownRef={dropdownRef} challenge={challenge} />
-      {length !== index + 1 && <hr className="w-4/5 mt-4" />}
+      {/* {length !== index + 1 && <hr className="w-4/5 mt-4" />} */}
+      {length !== index + 1 && <div className="horizon"></div>}
     </div>
   );
 };

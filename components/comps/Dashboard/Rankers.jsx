@@ -10,7 +10,7 @@ const Rankers = ({ user }) => {
         {user.rank}
       </h1>
       <h3>{user.teamName}</h3>
-      <p>{user.score}</p>
+      <p>{user.points}</p>
     </div>
   );
 };
