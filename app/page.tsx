@@ -14,7 +14,7 @@ export default function Home() {
     <main className="">
         <HeroSection/>
         <Timer/>
-        <Topics/ >
+        <Topics/>
         <Rules/>
         <Footer/>
         <Branding/> 

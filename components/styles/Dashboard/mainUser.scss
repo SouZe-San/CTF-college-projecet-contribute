@@ -31,15 +31,16 @@ div.mainUser_div {
         box-shadow: inset 0 0 16px 4px #797979c9, 0px 9px 14px -8px #95959594;
 
         &:hover {
-            box-shadow: inset 0 0 16px 4px rgba(121, 121, 121, 0.7882352941), 0px 9px 18px -6px rgba(149, 149, 149, 0.77);
-            ;
+            // box-shadow: inset 0 0 16px 4px rgba(121, 121, 121, 0.7882352941), 0px 9px 18px -6px rgba(149, 149, 149, 0.77);
+            // ;
 
             .card_inner_part {
                 .user_details {
                     .score {
                         box-shadow: -2px 4px 8px 0px rgba(8, 35, 37, 0.9), inset 0 0 5px 3px rgba(12, 45, 64, 0.7215686275);
                         scale: 1.05;
-                        transform: skew(2deg, 0deg);
+                        // transform: skew(2deg, 0deg);
+                        transform: translate3d(0.1rem, -0.1rem, 2rem);
                         border-color: rgba(12, 57, 64, 0.72);
                     }
 
@@ -155,7 +156,7 @@ div.mainUser_div {
                     font-size: 2.3rem;
                     font-weight: 800;
                     font-family: 'Chakra Petch', sans-serif;
-                    transition: all .4s ease-in;
+                    transition: all .2s ease-in;
                     translate: 0 -50px;
                     opacity: 0;
                 }
@@ -163,7 +164,7 @@ div.mainUser_div {
                 .box {
                     justify-content: space-evenly;
                     padding-right: 1.6rem;
-                    transition: all .4s ease-in;
+                    transition: all .2s ease-in;
                     margin-top: 0.5rem;
 
                     .horizon {

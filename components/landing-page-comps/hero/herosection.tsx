@@ -17,7 +17,7 @@ function HeroSection() {
   const panY = useRef(0);
 
   number++
-  console.log("I have been re rendered" , number ,"times")
+  // console.log("I have been re rendered" , number ,"times")
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

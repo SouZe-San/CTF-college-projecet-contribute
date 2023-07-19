@@ -94,7 +94,6 @@ const ChallengeItem = ({ length, index, challenge }) => {
         </button>
       </div>
       <Dropdown dropdownRef={dropdownRef} challenge={challenge} />
-      {/* {length !== index + 1 && <hr className="w-4/5 mt-4" />} */}
       {length !== index + 1 && <div className="horizon"></div>}
     </div>
   );

@@ -8,9 +8,10 @@ import Branding from '@/components/landing-page-comps/noFilterBranding/branding'
 const getChallenges = async () => {
   const URL ="https://fuku-api-specs.netlify.app/challenges"
   const response =  await fetch(URL,{
+    cache: 'no-cache',
     headers: {
             'Content-Type': 'application/json',
-            Cookie: 'teamId=team200',
+            Cookie: 'teamId=TNU2730',
           },
   }
   
