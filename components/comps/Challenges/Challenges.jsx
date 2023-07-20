@@ -11,8 +11,8 @@ import "../../styles/challenges/challengeBlock.scss";
 const Challenges = ({ allChallenges }) => {
   // ^Fetch Data from API
   const originalData = [...allChallenges];
-  // State Variables
 
+  // State Variables
   const [ChallengesData, setChallengesData] = useState(originalData);
   const [activeButton, setActiveButton] = useState(0);
 
@@ -98,29 +98,15 @@ const Challenges = ({ allChallenges }) => {
         </button>
       </div>
 
-      {ChallengesData == [] ? (
-        <>
-          <h1 className="text-cyan-800 text-center text-5xl my-12">Wait A Moment...</h1>
-        </>
-      ) : (
-        <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2 mt-2">
-          {!ChallengesData ? (
-            <>Wait A Moment</>
-          ) : (
-            ChallengesData.map((challenge, index) => {
-              return (
-                <div key={index}>
-                  <ChallengeItem
-                    challenge={challenge}
-                    length={ChallengesData.length}
-                    index={index}
-                  />
-                </div>
-              );
-            })
-          )}
-        </div>
-      )}
+      <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2 mt-2">
+        {ChallengesData.map((challenge, index) => {
+          return (
+            <div key={index}>
+              <ChallengeItem challenge={challenge} length={ChallengesData.length} index={index} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
