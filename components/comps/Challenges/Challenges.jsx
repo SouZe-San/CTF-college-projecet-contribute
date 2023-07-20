@@ -4,18 +4,16 @@ import React, { useState } from "react";
 
 import ChallengeItem from "./ChallengeItem";
 
+// import { ChallengesArray } from "./assest/allChallenges";
 // Stylesheet
 import "../../styles/challenges/challengeBlock.scss";
 
 const Challenges = ({ allChallenges }) => {
   // ^Fetch Data from API
   const originalData = [...allChallenges];
-
   // State Variables
 
   const [ChallengesData, setChallengesData] = useState(originalData);
-  const [isSortByLevel, setIsSortByLevel] = useState(false);
-  const [isSortByType, setIsSortByType] = useState(false);
   const [activeButton, setActiveButton] = useState(0);
 
   // Compare by Difficulty
@@ -40,8 +38,6 @@ const Challenges = ({ allChallenges }) => {
   // Click Function for Sort by Difficulty / Level of the Flag
   const sortByDifficulty = (e) => {
     setActiveButton(2);
-    setIsSortByLevel(!isSortByLevel);
-    setIsSortByType(false);
     e.preventDefault();
     ChallengesData.sort(compareByDifficulty);
     setChallengesData(ChallengesData);
@@ -50,8 +46,6 @@ const Challenges = ({ allChallenges }) => {
   // Click Function for Sort by Category of the Flag {If wa}
   const sortByCategory = (e) => {
     setActiveButton(1);
-    setIsSortByType(!isSortByType);
-    setIsSortByLevel(false);
     e.preventDefault();
     ChallengesData.sort(compareByCategory);
     setChallengesData(ChallengesData);
@@ -60,8 +54,6 @@ const Challenges = ({ allChallenges }) => {
   // Click Function Get Default Sort
   const sortByDefault = (e) => {
     setActiveButton(0);
-    setIsSortByType(false);
-    setIsSortByLevel(false);
     e.preventDefault();
     setChallengesData(originalData);
   };
@@ -106,19 +98,29 @@ const Challenges = ({ allChallenges }) => {
         </button>
       </div>
 
-      <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2 mt-2">
-        {!ChallengesData ? (
-          <>Wait A Moment</>
-        ) : (
-          ChallengesData.map((challenge, index) => {
-            return (
-              <div key={index}>
-                <ChallengeItem challenge={challenge} length={ChallengesData.length} index={index} />
-              </div>
-            );
-          })
-        )}
-      </div>
+      {ChallengesData == [] ? (
+        <>
+          <h1 className="text-cyan-800 text-center text-5xl my-12">Wait A Moment...</h1>
+        </>
+      ) : (
+        <div className="flags border-[2px] border-[#78f251] py-6  rounded-[10px] px-2 mt-2">
+          {!ChallengesData ? (
+            <>Wait A Moment</>
+          ) : (
+            ChallengesData.map((challenge, index) => {
+              return (
+                <div key={index}>
+                  <ChallengeItem
+                    challenge={challenge}
+                    length={ChallengesData.length}
+                    index={index}
+                  />
+                </div>
+              );
+            })
+          )}
+        </div>
+      )}
     </div>
   );
 };

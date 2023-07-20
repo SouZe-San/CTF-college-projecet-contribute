@@ -48,11 +48,11 @@ const ChallengeItem = ({ length, index, challenge }) => {
       });
     } else if (challenge.difficulty == "hard") {
       setStyleLevel({
-        color: "#ffaa4f",
+        color: "#fb0248",
       });
     } else {
       setStyleLevel({
-        color: "#fb0248",
+        color: "#ffaa4f",
       });
     }
   }, [challenge.difficulty]);
