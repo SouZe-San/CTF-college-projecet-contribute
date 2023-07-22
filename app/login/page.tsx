@@ -1,9 +1,9 @@
 import React from 'react'
-import InputCard from '@/components/comps/Login/InputCard'
+import MainBlock from '@/components/comps/Login/MainBlock'
 const page = () => {
   return (
     <div>
-      <InputCard/>
+    <MainBlock/>
     </div>
   )
 }
