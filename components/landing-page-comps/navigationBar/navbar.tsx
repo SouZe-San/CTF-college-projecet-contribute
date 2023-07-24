@@ -12,19 +12,19 @@ function NavBar() {
         <div className="menu">
           <ul>
             <li>
-              <Link href="/app/page.tsx"></Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#RewardsSection">Rewards</a>
+            <Link href="/app/page.tsx">Rewards</Link>
             </li>
             <li>
-              <a href="#TopicsSection">Topics</a>
+            <Link href="/app/page.tsx">Topics</Link>
             </li>
             <li>
-              <a href="#RulesSection">Rules</a>
+            <Link href="/app/page.tsx">Rules</Link>
             </li>
             <li>
-              <a href="/dashboard">Profile</a>
+            <Link href="/app/page.tsx">Profile</Link>
             </li>
           </ul>
         </div>
