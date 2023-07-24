@@ -1,5 +1,5 @@
 // import "@/components/landing-page-comps/navigationBar/navbar.scss"
-
+import Link from "next/link";
 import "./navbar.scss"
 
 function NavBar() {
@@ -12,7 +12,7 @@ function NavBar() {
         <div className="menu">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link href="/app/page.tsx"></Link>
             </li>
             <li>
               <a href="#RewardsSection">Rewards</a>
@@ -26,7 +26,6 @@ function NavBar() {
             <li>
               <a href="/dashboard">Profile</a>
             </li>
-            
           </ul>
         </div>
         <div className="cta_btns">

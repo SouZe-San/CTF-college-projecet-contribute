@@ -11,7 +11,7 @@ import img03 from "@/public/topic-images/image-number-three.webp";
 import img04 from "@/public/topic-images/image-number-four.jpg";
 import img05 from "@/public/topic-images/image-number-five.webp";
 
-import "@/components/landing-page-comps/topics/topicSectionStyles.scss"
+import "@/components/landing-page-comps/topics/topicSectionStyles.scss";
 
 let number = 0;
 const topicNames = [
@@ -66,14 +66,14 @@ const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-90%" },
   enter: {
     scale: 1,
-    x: "-50%",
-    y: "-50%",
+    x: "50%",
+    y: "10%",
     transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
   },
   closed: {
     scale: 0,
-    x: "-50%",
-    y: "-10%",
+    x: "50%",
+    y: "10%",
     transition: { duration: 0.4, ease: [0.32, 0, 0.67, 0] },
   },
 };
@@ -98,21 +98,19 @@ function Rules() {
     });
     //Move cursor
     console.log("I have been re rendered", number, "times");
-    window.addEventListener("mousemove", (e : MouseEvent) => {
+    window.addEventListener("mousemove", (e: MouseEvent) => {
       const { pageX, pageY } = e;
       xMoveContainer(pageX);
       yMoveContainer(pageY);
     });
 
-    
-
     return () => {
-      window.removeEventListener("mousemove", (e : MouseEvent) => {
+      window.removeEventListener("mousemove", (e: MouseEvent) => {
         const { pageX, pageY } = e;
         xMoveContainer(pageX);
         yMoveContainer(pageY);
       });
-    }
+    };
   }, [isHovered]);
 
   function mouseEnterInteraction(index: number) {
@@ -130,76 +128,6 @@ function Rules() {
   return (
     <div className="topicsSection" id="TopicsSection">
       <h1 className="titleOfSection sectionTitle">{topicSectionTitle}</h1>
-      {/* <div className="topicContainer">
-        <div
-          onMouseEnter={handleHover}
-          onMouseLeave={handleMouseLeave}
-          ref={parent1Ref}
-          className="topicWrapper"
-        >
-          <div ref={child1Ref} className="topicId">
-            001
-          </div>
-          <div className="topicName">
-            <span style={{ opacity: 0 }}>1</span>PWD
-          </div>
-        </div>
-        <div
-          ref={parent2Ref}
-          onMouseOver={handleHover}
-          onMouseLeave={handleMouseLeave}
-          className="topicWrapper"
-        >
-          <div ref={child1Ref} className="topicId">
-            002
-          </div>
-          <div className="topicName">Cryptography</div>
-        </div>
-        <div
-          ref={parent3Ref}
-          onMouseOver={handleHover}
-          onMouseLeave={handleMouseLeave}
-          className="topicWrapper"
-        >
-          <div ref={child1Ref} className="topicId">
-            003
-          </div>
-          <div className="topicName">Promt injection</div>
-        </div>
-        <div
-          ref={parent4Ref}
-          onMouseOver={handleHover}
-          onMouseLeave={handleMouseLeave}
-          className="topicWrapper"
-        >
-          <div ref={child1Ref} className="topicId">
-            004
-          </div>
-          <div className="topicName">Reverse engineering</div>
-        </div>
-        <div
-          ref={parent5Ref}
-          onMouseOver={handleHover}
-          onMouseLeave={handleMouseLeave}
-          className="topicWrapper"
-        >
-          <div ref={child1Ref} className="topicId">
-            005
-          </div>
-          <div className="topicName">Web security</div>
-        </div>
-        <div
-          ref={parent6Ref}
-          onMouseOver={handleHover}
-          onMouseLeave={handleMouseLeave}
-          className="topicWrapper"
-        >
-          <div ref={child1Ref} className="topicId">
-            006
-          </div>
-          <div className="topicName">Hardware exploration</div>
-        </div>
-      </div> */}
 
       <div className="topicContainer">
         {topicNames.map((topicName, index) => {
@@ -214,8 +142,8 @@ function Rules() {
               key={index}
               className="topicWrapper "
             >
-              <div className="topicName">{topicName}</div> 
-              <div className="topicId">(00{index + 1})</div> 
+              <div className="topicName">{topicName}</div>
+              <div className="topicId">(00{index + 1})</div>
             </div>
           );
         })}
@@ -228,7 +156,7 @@ function Rules() {
       >
         <div
           className="someThing"
-          style={{ left: isHovered.idx * -200 + "px" }}
+          style={{ left: isHovered.idx * -250 + "px" }}
         >
           {topicAssets.map((topicAsset, index) => {
             return (
@@ -236,7 +164,8 @@ function Rules() {
                 <Image
                   src={topicAsset.image}
                   // layout="fill"
-                  sizes="120%"
+                  // style={{ width: "130%" }}
+                  // sizes="120%"
                   // width={200}
                   alt="this is the best"
                 />

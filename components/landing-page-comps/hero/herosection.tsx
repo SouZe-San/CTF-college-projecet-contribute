@@ -1,13 +1,15 @@
 "use client";
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import BackgroundGallery from "./backgroundGallery";
-import "@/components/landing-page-comps/hero/heroSectionStyles.scss"
+import "./heroSectionStyles.scss"
 
 
 let number = 0 // !remove it when goes to the build 
 
 function HeroSection() {
+  let [resizeTheWidth , setResizeTheWidth] = useState(window.outerHeight)
+  // const windowThing
   const galleryRef = useRef<HTMLDivElement>(null);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
@@ -19,6 +21,7 @@ function HeroSection() {
   number++
   console.log("I have been re rendered" , number ,"times")
 
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.current = e.pageX;
@@ -28,11 +31,16 @@ function HeroSection() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    // window.addEventListener("resize", () =>{
+      // setResizeTheWidth(resizeTheWidth = window.innerWidth)
+      // console.log(resizeTheWidth)
+    // })
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
 
   useEffect(() => {
     const handleAnotherMouseMove = () => {
@@ -62,36 +70,18 @@ function HeroSection() {
   return (
     <div className="heroSection" id="HeroSection">
       {/* <NavBar /> */}
-      <BackgroundGallery ref={galleryRef} />
+      {resizeTheWidth>= 480 ? <BackgroundGallery ref={galleryRef}/> : ""}
+      {/* <BackgroundGallery ref={galleryRef} /> */}
       <div className="overlay">
         <div className="overlayContent">
-          {/* <h1>Hi, I'm Rishabh</h1> */}
-          <h2>Full Stack Developer</h2>
-          <p>
-            I am a full stack developer with a passion for building beautiful
-            and functional websites. I am currently pursuing my B.Tech in
-            Computer Science from VIT, Vellore.
-          </p>
-          <div className="socialLinks">
-            <a href="https://www.linkedin.com/in/rishabh-raj-2a1b3b1a0/">
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="
-            https://github.com/Rishabhr96?tab=repositories&q=&
-            type=&language=&sort="
-            >
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/rishabhr96/">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/rishabh.raj.96/">
-              <i className="fab fa-facebook"></i>
-            </a>
-          </div>
+          <h1 className="heroSectionTitle">
+            <div className="upperTitle">CAPTURE</div>
+            <div className="lowerTitle">THE FLAG</div>
+            </h1>
+          
+          <p className="tagline">Team up, stealth in, and secure victory in every game!</p>
+          <button className="ctaBtnOfHero">Conquer The Flags</button>
         </div>
-        bBackgroundGallery
       </div>
     </div>
   );

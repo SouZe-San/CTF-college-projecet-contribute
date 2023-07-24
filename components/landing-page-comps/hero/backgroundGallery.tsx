@@ -1,11 +1,18 @@
-import React, { useRef, forwardRef, FC } from "react";
+import React, { useRef, forwardRef } from "react";
+import Image from "next/image";
 import "@/components/landing-page-comps/hero/backgroundGalleryStyles.scss"
+import bggImg001 from "@/public/gallery-images/bgg_img_001.webp"
 
 const BackgroundGallery = forwardRef(({}, ref : React.Ref<HTMLDivElement>) => {
   return (
       <div id="gallery" ref={ref}>
         <div className="tile">
-          <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />
+          <Image
+            // width={""}
+            layout="contain"
+            src={bggImg001}
+            alt="bitcoin"
+          />
         </div>
         <div className="tile">
           <img src="https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsdWV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70" />

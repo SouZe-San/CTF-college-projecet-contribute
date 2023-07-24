@@ -60,20 +60,24 @@
     }
     .imageContainer{
         pointer-events: none;
-        border: 1px solid white;
         position: absolute;
         transform: translate(-50%,-50%);
         height: 200px;
         width: 200px;
         overflow: hidden;
         z-index: -1;
+        rotate: -25deg;
+        // scale: 0;
         .someThing{
             display: flex;
             position: inherit;
+            gap: 50px;
             transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
             .imageWrapper{
                 width : 200px ;
+                position: relative;
                 overflow: hidden;
+                // rotate: -25deg;
             }
         }
         
