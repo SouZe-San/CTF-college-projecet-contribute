@@ -59,7 +59,7 @@ const Challenges = ({ allChallenges }) => {
   };
 
   return (
-    <div className="px-32 mt-24 mb-8">
+    <div className="px-32 mb-8">
       <div className="page_header ">
         <h1>Capture The Flag</h1>
         <h4>

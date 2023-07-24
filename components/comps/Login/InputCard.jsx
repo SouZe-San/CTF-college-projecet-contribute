@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
-
+import { authenticate } from "@/actions/auth";
 // Toaster Massage
 const valid = () => toast("This is A Valid");
 const not_valid = () => toast("Not a Valid");
@@ -13,7 +13,6 @@ const InputCard = () => {
   const [teamId, setTeamId] = useState("");
   const [password, setPassword] = useState("");
   const [isHide, setIsHide] = useState(true);
-
   useEffect(() => {
     const pass = document.getElementById("pass");
     if (!isHide) {
@@ -26,9 +25,11 @@ const InputCard = () => {
     if (teamId !== "" && password !== "") {
       console.log(teamId);
       console.log(password);
-      valid();
+      authenticate(teamId, password);
+      setPassword("");
+      setTeamId("");
     } else {
-      not_valid();
+      alert(" Give Valid Inputs :) ");
     }
   };
 

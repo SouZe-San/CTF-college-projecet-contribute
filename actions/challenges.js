@@ -1,6 +1,6 @@
 "use server";
-
-const host = "https://fuku-api-specs.netlify.app";
+import { connection } from "./connection";
+const host = connection.host;
 
 export const flagSubmit = async (challengeId, flag) => {
   console.log("flagSubmit action called");

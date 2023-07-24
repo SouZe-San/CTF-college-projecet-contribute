@@ -41,7 +41,7 @@ const RankingBlock = ({ scoreData, teamIdData }) => {
 
   return (
     <>
-      <div className="md:px-40 px-12 flex flex-col items-center mt-32 mb-16">
+      <div className="md:px-40 px-12 flex flex-col items-center mb-16">
         <h1 className="bg_text">
           C{"  "}T{"  "}F <br /> CHAMPIONSHIP
         </h1>

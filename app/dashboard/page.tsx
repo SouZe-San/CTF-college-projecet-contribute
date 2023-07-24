@@ -2,12 +2,13 @@ import React from 'react'
 
 import RankingBlock from '../../components/comps/Dashboard/RankingBlock'
 import Branding from '@/components/landing-page-comps/noFilterBranding/branding'
-
+import { connection } from "@/actions/connection";
+const host = connection.host
 
 const geSore = async () => {
   try {
     
-    const URL = "https://fuku-api-specs.netlify.app/score"
+    const URL = `${host}/score`
     const response =  await fetch(URL,{
       cache: 'no-cache',
       next:{
@@ -30,7 +31,7 @@ const geSore = async () => {
 
 const getFormId = async () => {
   try {
-    const URL = "https://fuku-api-specs.netlify.app/id";
+    const URL = `${host}/id`
     const response = await fetch(URL, {
       cache: "no-cache",
       headers: {
@@ -51,11 +52,12 @@ const page = async () => {
   const [scoreData, teamIdData] = await Promise.all([geSore(), getFormId()]); 
 
   return (
-    <div className='mb-8'>
+    <div className='mb-8 mt-32'>
+
       {scoreData && teamIdData ?
 <RankingBlock scoreData={scoreData} teamIdData={teamIdData} />
 :
-<h1>Some Network Issue</h1>
+<h1 className='text-center text-4xl text-emerald-700'>Some Network Issue</h1>
 
       }
     <Branding/>
