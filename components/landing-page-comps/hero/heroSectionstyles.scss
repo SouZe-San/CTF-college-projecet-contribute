@@ -1,7 +1,44 @@
 .heroSection{
-	overflow: hidden;
 	width: 100vw;
-	height: 100vh;
-	// border: 1px solid red;
+	height: 800px;
+	overflow: hidden;
+	position: relative;
+	.overlay{
+		z-index: 4;
+		color: rgb(255, 255, 255);
+		position: absolute;
+		left: 10%;
+		top: 50%;
+		transform: translateY(-50%);
+		.overlayContent{
+			.heroSectionTitle{
+				font-size: clamp(3rem , 12vw + 1rem , 7.1rem);
+				// font-size: clamp(1.875rem,3.125vw + 1.25rem,4.0625rem);
+				line-height: .9;
+				font-family:  "Monument Extended" , "Poppins";
+				letter-spacing: -1px;
+				line-height: .9;
+			}
+			.tagline{
+				font-size: 1rem;
+				color: rgb(199, 199, 199);
+				margin: 1rem 10px;
+				font-family:  "Monument Extended", "Poppins";
+				letter-spacing: 1px;
+			}
+			.ctaBtnOfHero{
+				padding: 15px 25px;
+				// background-color: rgb(190, 249, 79);
+				// background-color: rgb(190, 249, 79);
+				background-color: #ff6700;
+				// background-color: #cad874;
+				border-radius: 1rem;
+				margin-top: 1rem;
+				color: black;
+				font-weight: bolder;
+
+			}
+		}
+	}
 }
 

@@ -1,7 +1,6 @@
 // import "@/components/landing-page-comps/navigationBar/navbar.scss"
-
+import Link from "next/link";
 import "./navbar.scss"
-
 function NavBar() {
   return (
     <nav className="text-white">
@@ -12,25 +11,24 @@ function NavBar() {
         <div className="menu">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="#RewardsSection">Rewards</a>
+              <Link href="/#RewardsSection">Rewards</Link>
             </li>
             <li>
-              <a href="#TopicsSection">Topics</a>
+             <Link href="/#TopicsSection">Topics</Link>
             </li>
             <li>
-              <a href="#RulesSection">Rules</a>
+              <Link href="/#RulesSection">Rules</Link>
             </li>
             <li>
-              <a href="/dashboard">Profile</a>
+              <Link href="/dashboard">Profile</Link>
             </li>
-            
           </ul>
         </div>
         <div className="cta_btns">
-          <button className="">Log in</button>
+          <button className=""><Link href="/login">Log in</Link></button>
         </div>
       </div>
     </nav>

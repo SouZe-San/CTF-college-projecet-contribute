@@ -3,29 +3,23 @@
 	width: 140vmax;  
 	position: relative;
     z-index: -1;
+	filter: brightness(50%) blur(1px);
   }
   
   .tile {
 	border-radius: 1vmax;
 	position: absolute;
 	transition: transform 800ms ease;
+	overflow: hidden;
   }
   
-  .tile:hover {
-	transform: scale(1.1);
-  }
-  
-  .tile:hover > img {
-	opacity: 1;
-	transform: scale(1.01);
-  }
   
   .tile > img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
 	border-radius: inherit;
-	opacity: 0;
+	// opacity: 0;
 	transition: opacity 800ms ease,
 	  transform 800ms ease;
   }

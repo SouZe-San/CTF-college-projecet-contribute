@@ -1,12 +1,19 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import "@/components/landing-page-comps/timer/timerSectionStyles.scss"
-import "@/components/landing-page-comps/timer/timerLogicStyles.scss"
-
+import "./timerLogicStyles.scss";
+import Image from "next/image";
+import timerTBS from "@/public/title-stoked-bg/timerTitleBgStoked.svg"
 const Timer = () => (
   <div className="timerContainer">
     <div className="timerWrapper">
-      <h1 className="header sectionTitle">Competition starts in</h1>
+      <div className="header">
+        <Image
+        className="bg-title-stoked"
+        src={timerTBS}
+        alt="competion title svg"
+        />
+        <h1 className="timerTitle sectionTitle">COMPETITION IN</h1>
+      </div>
       <TimerLogic deadline="August, 11, 2023" />
     </div>
   </div>
