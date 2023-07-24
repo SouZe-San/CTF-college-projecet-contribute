@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,10 +12,13 @@ import MainUser from "./MainUser";
 import "../../styles/Dashboard/dashboard.scss";
 
 // Data
-import { Users } from "./user";
+// import { Users } from "./user";
 
-const RankingBlock = () => {
+const RankingBlock = ({ scoreData, teamIdData }) => {
   const rankRow = useRef([]);
+
+  // Specific Logged in Team data
+  const loggedTeamInfo = scoreData.find((user) => user["teamId"] === teamIdData.teamId);
 
   // Scroll Animation
   useLayoutEffect(() => {
@@ -38,24 +41,26 @@ const RankingBlock = () => {
 
   return (
     <>
-      <div className="md:px-40 px-12 flex flex-col items-center mt-32 mb-16">
+      <div className="md:px-40 px-12 flex flex-col items-center mb-16">
         <h1 className="bg_text">
-          C{"  "}T{"  "}F{"\n"} CHAMPIONSHIP
+          C{"  "}T{"  "}F <br /> CHAMPIONSHIP
         </h1>
         {/* -------- Details Of Login Team */}
-        <MainUser />
+        <MainUser loggedTeamInfo={loggedTeamInfo} teamIdData={teamIdData} />
 
         {/* -------- Ranking Table */}
         <div className="rankTable w-full mt-12">
-          {Users.sort((curr, next) => curr.rank - next.rank).map((user, index) => {
-            return (
-              <div key={user.rank} className="w-full" ref={(el) => (rankRow.current[index] = el)}>
-                <Rankers user={user} />
-                <div className="horizon"></div>
-                <div className="horizon mt-[8px]"></div>
-              </div>
-            );
-          })}
+          {scoreData
+            .sort((curr, next) => curr.rank - next.rank)
+            .map((user, index) => {
+              return (
+                <div key={user.rank} className="w-full" ref={(el) => (rankRow.current[index] = el)}>
+                  <Rankers user={user} />
+                  <div className="horizon"></div>
+                  <div className="horizon mt-[8px]"></div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>

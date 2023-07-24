@@ -5,36 +5,31 @@
 @font-face {
   font-family: "Arame";
   font-weight: 400;
-  src: url("/public/font/Arame/Arame.woff2") format("woff2")
-    url("/public/font/Arame/Arame.woff") format("woff");
+  src: url("/public/font/Arame/Arame.woff2") format("woff2") url("/public/font/Arame/Arame.woff") format("woff");
 }
 
 @font-face {
   font-family: "Arame";
   font-weight: 300;
-  src: url("/public/font/Arame/Arame-Thin.woff2") format("woff2")
-    url("/public/font/Arame/Arame-Thin.woff") format("woff");
+  src: url("/public/font/Arame/Arame-Thin.woff2") format("woff2") url("/public/font/Arame/Arame-Thin.woff") format("woff");
 }
 
 @font-face {
   font-family: "Arame";
   font-weight: 600;
-  src: url("/public/font/Arame/ArameMono-Bold.woff2") format("woff2")
-    url("/public/font/Arame/ArameMono-Bold.woff") format("woff");
+  src: url("/public/font/Arame/ArameMono-Bold.woff2") format("woff2") url("/public/font/Arame/ArameMono-Bold.woff") format("woff");
 }
 
 @font-face {
   font-family: "Mars model";
   font-weight: 400;
-  src: url("/public/font/Mars-model/MarsModel.woff2") format("woff2")
-    url("/public/font/Mars-model/MarsModel.woff") format("woff");
+  src: url("/public/font/Mars-model/MarsModel.woff2") format("woff2") url("/public/font/Mars-model/MarsModel.woff") format("woff");
 }
 
 @font-face {
   font-family: "Mars model";
   font-weight: 600;
-  src: url("/public/font/Mars-model/MarsModel-Bold.woff2") format("woff2")
-    url("/public/font/Mars-model/MarsModel-Bold.woff") format("woff");
+  src: url("/public/font/Mars-model/MarsModel-Bold.woff2") format("woff2") url("/public/font/Mars-model/MarsModel-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -50,8 +45,7 @@
 @font-face {
   font-family: "Monument extended";
   font-weight: 400;
-  src: url("/public/font/Monument-extended/MonumentExtended-Regular.woff2")
-    format("woff2");
+  src: url("/public/font/Monument-extended/MonumentExtended-Regular.woff2") format("woff2");
 }
 
 @tailwind base;
@@ -95,6 +89,7 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
   // background-color: #031315;
   background-color: #000000;
   color: white;

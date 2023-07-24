@@ -1,8 +1,11 @@
+// "use client";
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
+// Server Actions
+import { flagSubmit, spawnCall } from "@/actions/challenges";
 import "../../styles/challenges/dropdown.scss";
 import Timer from "./Timer";
-
 const Dropdown = ({ dropdownRef, challenge }) => {
   // State Variables
   const [isStart, setIsStart] = useState(false);
@@ -11,15 +14,18 @@ const Dropdown = ({ dropdownRef, challenge }) => {
   const [point, setPoint] = useState(10);
 
   // Function For spawn
-
-  // Spawn Timer For 30 minuit
+  const challengeId = challenge.challengeId;
+  //* Spawn Timer For 30 minuit
   useEffect(() => {
     const timerDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
+
     if (isStart) {
-      const spawnTimer = setTimeout(() => {
-        setConnString("");
+      const spawnTimer = setTimeout(async () => {
+        // TODO: Call Await Function for STOP spawn
+        await spawnCall(challengeId);
         setIsStart(false);
-        console.log("Timer Done");
+        setConnString("");
+        alert("Timer completed!");
       }, timerDuration);
 
       return () => {
@@ -28,6 +34,7 @@ const Dropdown = ({ dropdownRef, challenge }) => {
     } else {
       setConnString("");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isStart]);
 
   // Set Point According Difficulty Level
@@ -41,17 +48,55 @@ const Dropdown = ({ dropdownRef, challenge }) => {
     }
   }, [challenge.difficulty]);
 
-  // Click Start btn For Send spawn Request
-  const spawnStart = () => {
+  //*  Send spawn Request
+  const spawnStart = async (e) => {
+    e.preventDefault();
     setIsStart(!isStart);
-    setConnString(`ns pwn.me:45533`);
+    if (!isStart) {
+      console.log("spawnStart :");
+      // TODO: Call Await Function for spawn
+      const spawn = await spawnCall(challengeId);
+      const host = spawn.connectionInfo.host;
+      const port = spawn.connectionInfo.port;
+      const string = `nc ${host} ${port}`;
+      setConnString(string);
+    } else {
+      await spawnCall(challengeId);
+      setConnString("");
+    }
   };
 
-  // Flag Submit -
-  const handelSubmit = (e) => {
+  //* Flag Submit -
+  const handelSubmit = async (e) => {
     e.preventDefault();
-    console.log(flag);
+    console.log("flagSubmit", challengeId);
+    console.log("flagSubmit", flag);
+    if (flag === "") return alert("Please Enter Flag");
+    // TODO:CALL Await Function for Submit Flag
+    const response = await flagSubmit(challengeId, flag);
+    console.log("flagSubmit :", response);
     setFlag("");
+  };
+
+  //* Async Function for Download Attachment
+  const attachFileDownload = async (e, fileUrl) => {
+    console.log("attachFileDownload", fileUrl);
+    e.preventDefault();
+    fileUrl = "https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg";
+    try {
+      const response = await fetch(fileUrl);
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = new Date().getTime(); // Specify the desired file name
+      link.click();
+
+      URL.revokeObjectURL(url); // Clean up the object URL
+    } catch (error) {
+      console.error("Error downloading the file:", error);
+    }
   };
 
   return (
@@ -117,7 +162,10 @@ const Dropdown = ({ dropdownRef, challenge }) => {
             {isStart && <div className="connection_string select-all">{connString}</div>}
           </div>
         ) : (
-          <button className="attachBtn flex ">
+          <button
+            className="attachBtn flex "
+            onClick={(e) => attachFileDownload(e, challenge.attatchmentURL)}
+          >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M13 12H16L12 16L8 12H11V8H13V12ZM15 4H5V20H19V8H15V4ZM3 2.9918C3 2.44405 3.44749 2 3.9985 2H16L20.9997 7L21 20.9925C21 21.5489 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918Z"></path>
             </svg>{" "}
@@ -128,7 +176,7 @@ const Dropdown = ({ dropdownRef, challenge }) => {
       {/* Text area for writing Flag */}
       <div className="textarea">
         <h2 className="DropDown_headline"> Tell Us Your Flag</h2>
-        <form className="">
+        <form className="" action="post">
           <div className="flex md:flex-row  flex-col items-end">
             <label htmlFor="ans" className=" w-4/5 lg:w-3/5">
               <textarea
@@ -140,7 +188,6 @@ const Dropdown = ({ dropdownRef, challenge }) => {
                   setFlag(e.target.value);
                 }}
                 rows="1"
-                // onKeyPress={handleEnter}
               ></textarea>
             </label>
             <button className="submit_btn" type="submit" disabled={false} onClick={handelSubmit}>

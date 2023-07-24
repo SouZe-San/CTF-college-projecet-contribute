@@ -4,6 +4,7 @@ nav {
   position: absolute;
   top: 50px;
   left: 50%;
+  z-index: 200;
   transform: translateX(-50%);
   padding: 0 1rem;
   display: flex;
@@ -12,7 +13,7 @@ nav {
   backdrop-filter: blur(32px);
   background-blend-mode: overlay;
 
-//   background-color: rgba(255, 255, 255, .08);
+  //   background-color: rgba(255, 255, 255, .08);
   background-color: rgba(85, 85, 85, 0.246);
   border-radius: 1rem;
   border: 1px solid #ffffff2f;
@@ -29,7 +30,8 @@ nav {
     // border: 1px solid white;
     width: 75%;
     align-items: center;
-    font-family:"Poppins";
+    font-family: "Poppins";
+
     .menu {
       ul {
         display: flex;
@@ -56,7 +58,8 @@ nav {
         color: black;
         padding: 5px 1rem;
         border-radius: 7px;
-        &:hover{
+
+        &:hover {
           transform: scale(1.1);
         }
       }

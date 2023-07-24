@@ -16,9 +16,9 @@ export default function Home() {
         <HeroSection/>
         <Timer/>
         <Rewards/>
-        {/* <Topics/ > */}
-        {/* <Rules/> */}
-        {/* <Footer/> */}
+        <Topics/>
+        <Rules/>
+        <Footer/>
         <Branding/> 
     </main>
   )

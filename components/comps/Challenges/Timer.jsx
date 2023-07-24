@@ -8,8 +8,8 @@ const Timer = () => {
       if (timeRemaining > 0) {
         setTimeRemaining((prevTime) => prevTime - 1);
       } else {
-        clearInterval(timerInterval);
         alert("Timer completed!");
+        clearInterval(timerInterval);
       }
     }, 1000);
 
