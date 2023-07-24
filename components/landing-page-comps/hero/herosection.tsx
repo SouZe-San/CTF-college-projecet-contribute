@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 import BackgroundGallery from "./backgroundGallery";
 import "./heroSectionStyles.scss"
+import Link from "next/link";
 
 
 let number = 0 // !remove it when goes to the build 
@@ -19,7 +20,7 @@ function HeroSection() {
   const panY = useRef(0);
 
   number++
-  console.log("I have been re rendered" , number ,"times")
+  // console.log("I have been re rendered" , number ,"times")
 
 
   useEffect(() => {
@@ -80,7 +81,7 @@ function HeroSection() {
             </h1>
           
           <p className="tagline">Team up, stealth in, and secure victory in every game!</p>
-          <button className="ctaBtnOfHero">Conquer The Flags</button>
+          <button className="ctaBtnOfHero"> <Link href="/flags" >Conquer The Flags</Link></button>
         </div>
       </div>
     </div>

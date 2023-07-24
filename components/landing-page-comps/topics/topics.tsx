@@ -91,7 +91,7 @@ function Rules() {
       duration: 0.2,
       ease: "power3",
     });
-    console.log("isHoverd", isHovered, "index is ", isHovered.idx);
+    // console.log("isHoverd", isHovered, "index is ", isHovered.idx);
     let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {
       duration: 0.2,
       ease: "power3",
@@ -115,14 +115,14 @@ function Rules() {
 
   function mouseEnterInteraction(index: number) {
     setIsHovered({ active: true, idx: index });
-    console.log("isHoverd", isHovered, "index is ", index);
+    // console.log("isHoverd", isHovered, "index is ", index);
   }
-  console.log(isHovered);
+  // console.log(isHovered);
   //   console.log(isHovered)
   //   console.log("I have been re rendered" , number ,"times")
   function mouseLeaveInteraction(index: number) {
     setIsHovered({ active: false, idx: index });
-    console.log("isHoverd", isHovered, "index is ", index);
+    // console.log("isHoverd", isHovered, "index is ", index);
   }
 
   return (

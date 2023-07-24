@@ -1,0 +1,26 @@
+.card_case {
+    border: 1.3px solid rgb(138 149 149 / 57%);
+    border-radius: 10px;
+    background: #a1a7a21f;
+    background: linear-gradient(290deg, rgba(3, 168, 170, 0.9019607843), transparent 58%);
+    backdrop-filter: blur(5px) saturate(5);
+    min-width: 65%;
+    min-height: 63vh;
+    margin-top: 5rem;
+    justify-content: space-between;
+    // align-items: center;
+
+    .page_details {
+        width: 45%;
+        background: #02121463;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 1.4rem;
+
+    }
+
+    // .page_input {
+    //     // width: 50%;
+    //     // background: linear-gradient(82deg, #03a8aae6, transparent 95%);
+    // }
+}

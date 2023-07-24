@@ -1,0 +1,24 @@
+h1 {
+    svg {
+        width: 9rem;
+        rotate: 30deg;
+        display: inline;
+        position: relative;
+        right: 20px;
+
+        path {
+            fill: rgba(0, 255, 40, 0.53);
+            fill-opacity: 58%;
+        }
+    }
+}
+
+h1.bottomLine {
+    font-size: 5rem;
+    position: absolute;
+    bottom: 20px;
+    line-height: 0.8;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Kanit', sans-serif;
+}

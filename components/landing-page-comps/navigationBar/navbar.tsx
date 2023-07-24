@@ -1,7 +1,6 @@
 // import "@/components/landing-page-comps/navigationBar/navbar.scss"
 import Link from "next/link";
 import "./navbar.scss"
-
 function NavBar() {
   return (
     <nav className="text-white">
@@ -15,21 +14,21 @@ function NavBar() {
               <Link href="/">Home</Link>
             </li>
             <li>
-            <Link href="/app/page.tsx">Rewards</Link>
+              <Link href="/#RewardsSection">Rewards</Link>
             </li>
             <li>
-            <Link href="/app/page.tsx">Topics</Link>
+             <Link href="/#TopicsSection">Topics</Link>
             </li>
             <li>
-            <Link href="/app/page.tsx">Rules</Link>
+              <Link href="/#RulesSection">Rules</Link>
             </li>
             <li>
-            <Link href="/app/page.tsx">Profile</Link>
+              <Link href="/dashboard">Profile</Link>
             </li>
           </ul>
         </div>
         <div className="cta_btns">
-          <button className="">Log in</button>
+          <button className=""><Link href="/login">Log in</Link></button>
         </div>
       </div>
     </nav>

@@ -3,7 +3,7 @@
     padding-bottom: 2rem;
 
     h1 {
-        font-size: 4.3rem;
+        font-size: 3.8rem;
         font-weight: bolder;
         padding-bottom: 0.5rem;
         color: #78F251;
@@ -17,8 +17,27 @@
 }
 
 .sorting {
+
+    .active_sort {
+        background: #62ff62c4;
+        color: black;
+        font-weight: 600;
+        box-shadow: inset 0 0 7px 4px #000000ab !important;
+
+        &:hover {
+            color: black !important;
+            font-weight: 600
+        }
+
+        svg {
+            path {
+                fill: black;
+            }
+        }
+    }
+
     .sort_btn {
-        border: 1px solid rgb(84, 172, 33);
+        box-shadow: inset 0 0 4px 1px #04ff04;
         padding: 5px 1rem;
         margin: 0 0.5rem;
         border-radius: 20px;
@@ -31,15 +50,16 @@
         }
 
         &:hover {
-            background: #2d5d2d;
-            color: black;
-            font-weight: 600;
-            box-shadow: inset 0 0 10px #000000;
-            // border: none;
+            // background: #62ff62c4;
+            // color: black;
+            // font-weight: 600;
+            // box-shadow: inset 0 0 7px 4px #000000ab;
+            font-weight: 500;
+            color: #a2fde3;
 
             svg {
                 path {
-                    fill: black;
+                    fill: #a2fde3;
                 }
             }
         }
