@@ -1,59 +1,73 @@
 nav {
-    width: 80vw;
-    height: 48px;
-    // position: fixed;
-    position: relative;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
+  width: 80vw;
+  height: 48px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(32px);
+  background-blend-mode: overlay;
+
+//   background-color: rgba(255, 255, 255, .08);
+  background-color: rgba(85, 85, 85, 0.246);
+  border-radius: 1rem;
+  border: 1px solid #ffffff2f;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2), 0 20px 25px rgba(0, 0, 0, 0.5);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  .btns {
+    // display: flex;
+    // justify-content: space-between;
+    // border: 1px solid white;
+    width: 75%;
     align-items: center;
-    backdrop-filter: saturate(190%) blur(3px);
-    background-blend-mode: overlay;
-    background-color: rgba(255, 255, 255, .08);
-    border-radius: 2rem;
-    border: 1px solid rgba(255, 255, 255, .08);
-    box-shadow: 2px 2px rgba(0, 0, 0, .2), 0 20px 25px rgba(0, 0, 0, .5);
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: bolder;
-    }
-
-    .btns {
-        // display: flex;
-        // justify-content: space-between;
-        // border: 1px solid white;
-        width: 75%;
+    font-family:"Poppins";
+    .menu {
+      ul {
+        display: flex;
+        // border : 1px solid white;
+        gap: 3rem;
         align-items: center;
 
-        .menu {
-            ul {
-                display: flex;
-                // border : 1px solid white;
-                gap: 3rem;
-                align-items: center;
+        li {
+          list-style: none;
+          font-size: 0.9rem;
 
-                li {
-                    list-style: none;
-                    font-size: .9rem;
-
-                    // border: 1px solid white;
-                    a {
-                        text-decoration: none;
-                        color: white;
-                    }
-                }
-            }
-
+          // border: 1px solid white;
+          a {
+            text-decoration: none;
+            color: white;
+          }
         }
-
-        .cta_btns {
-            border: 1px solid white;
-        }
-
-
+      }
     }
+
+    .cta_btns {
+      button {
+        background-color: white;
+        color: black;
+        padding: 5px 1rem;
+        border-radius: 7px;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  nav {
+    width: 90%;
+    top: 5%;
+    padding: 16px 24px;
+  }
 }
