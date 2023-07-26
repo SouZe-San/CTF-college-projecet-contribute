@@ -6,7 +6,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { flagSubmit, spawnCall } from "@/actions/challenges";
 import "../../styles/challenges/dropdown.scss";
 import Timer from "./Timer";
-const Dropdown = ({ dropdownRef, challenge }) => {
+const Dropdown = ({ dropdownRef, challenge, index }) => {
   // State Variables
   const [isStart, setIsStart] = useState(false);
   const [flag, setFlag] = useState("");
@@ -53,7 +53,7 @@ const Dropdown = ({ dropdownRef, challenge }) => {
     e.preventDefault();
     setIsStart(!isStart);
     if (!isStart) {
-      console.log("spawnStart :");
+      // console.log("spawnStart :");
       // TODO: Call Await Function for spawn
       const spawn = await spawnCall(challengeId);
       const host = spawn.connectionInfo.host;
@@ -69,19 +69,18 @@ const Dropdown = ({ dropdownRef, challenge }) => {
   //* Flag Submit -
   const handelSubmit = async (e) => {
     e.preventDefault();
-    console.log("flagSubmit", challengeId);
-    console.log("flagSubmit", flag);
+
+    setFlag("");
     if (flag === "") return alert("Please Enter Flag");
     // TODO:CALL Await Function for Submit Flag
     const response = await flagSubmit(challengeId, flag);
-    console.log("flagSubmit :", response);
-    setFlag("");
   };
 
   //* Async Function for Download Attachment
   const attachFileDownload = async (e, fileUrl) => {
     console.log("attachFileDownload", fileUrl);
     e.preventDefault();
+    // TODO: This come from data
     fileUrl = "https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg";
     try {
       const response = await fetch(fileUrl);
@@ -90,7 +89,7 @@ const Dropdown = ({ dropdownRef, challenge }) => {
 
       const link = document.createElement("a");
       link.href = url;
-      link.download = new Date().getTime(); // Specify the desired file name
+      link.download = `Flag_0${index}`; //  desired file name
       link.click();
 
       URL.revokeObjectURL(url); // Clean up the object URL

@@ -1,32 +1,42 @@
-.heroSection{
+@font-face {
+	font-family: "Monument extended";
+	font-weight: 400;
+	src: url("/public/font/Monument-extended/MonumentExtended-Regular.woff2") format("woff2");
+}
+
+.heroSection {
 	width: 100vw;
 	height: 800px;
 	overflow: hidden;
 	position: relative;
-	.overlay{
+
+	.overlay {
 		z-index: 4;
 		color: rgb(255, 255, 255);
 		position: absolute;
 		left: 10%;
 		top: 50%;
 		transform: translateY(-50%);
-		.overlayContent{
-			.heroSectionTitle{
-				font-size: clamp(3rem , 12vw + 1rem , 7.1rem);
+
+		.overlayContent {
+			.heroSectionTitle {
+				font-size: clamp(3rem, 12vw + 1rem, 7.1rem);
 				// font-size: clamp(1.875rem,3.125vw + 1.25rem,4.0625rem);
 				line-height: .9;
-				font-family:  "Monument Extended" , "Poppins";
+				font-family: "Monument Extended", "Poppins";
 				letter-spacing: -1px;
 				line-height: .9;
 			}
-			.tagline{
+
+			.tagline {
 				font-size: 1rem;
 				color: rgb(199, 199, 199);
 				margin: 1rem 10px;
-				font-family:  "Monument Extended", "Poppins";
+				font-family: "Monument Extended", "Poppins";
 				letter-spacing: 1px;
 			}
-			.ctaBtnOfHero{
+
+			.ctaBtnOfHero {
 				padding: 15px 25px;
 				// background-color: rgb(190, 249, 79);
 				// background-color: rgb(190, 249, 79);
@@ -41,4 +51,3 @@
 		}
 	}
 }
-

@@ -11,6 +11,7 @@ import Branding from "@/components/landing-page-comps/noFilterBranding/branding"
 
 
 export default function Home() {
+
   return (
     <main className="">
         <HeroSection/>

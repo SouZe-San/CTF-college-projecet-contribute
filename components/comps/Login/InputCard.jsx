@@ -1,18 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
 import { authenticate } from "@/actions/auth";
-// Toaster Massage
-const valid = () => toast("This is A Valid");
-const not_valid = () => toast("Not a Valid");
 
 // Added style
 import "@/components/styles/login/inputCard.scss";
+import { useRouter } from "next/navigation";
 
 const InputCard = () => {
   const [teamId, setTeamId] = useState("");
   const [password, setPassword] = useState("");
   const [isHide, setIsHide] = useState(true);
+  const router = useRouter();
   useEffect(() => {
     const pass = document.getElementById("pass");
     if (!isHide) {
@@ -21,11 +19,13 @@ const InputCard = () => {
       pass.type = "password";
     }
   }, [isHide]);
-  const userSubmit = () => {
+  const userSubmit = async () => {
+    console.log(teamId, password);
     if (teamId !== "" && password !== "") {
-      console.log(teamId);
-      console.log(password);
-      authenticate(teamId, password);
+      const isAuth = await authenticate(teamId, password);
+      if (isAuth === 200) {
+        router.push("/");
+      }
       setPassword("");
       setTeamId("");
     } else {
@@ -47,12 +47,7 @@ const InputCard = () => {
               required
             />
           </div>
-          <div
-            className="input"
-            onFocus={(e) => {
-              console.log(e.currentTarget);
-            }}
-          >
+          <div className="input">
             <input
               type="password"
               name="pass"

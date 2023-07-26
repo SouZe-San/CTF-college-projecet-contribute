@@ -9,7 +9,7 @@ import Link from "next/link";
 let number = 0 // !remove it when goes to the build 
 
 function HeroSection() {
-  let [resizeTheWidth , setResizeTheWidth] = useState(window.outerHeight)
+  const [resizeTheWidth , setResizeTheWidth] = useState(window.outerHeight)
   // const windowThing
   const galleryRef = useRef<HTMLDivElement>(null);
   const mouseX = useRef(0);
