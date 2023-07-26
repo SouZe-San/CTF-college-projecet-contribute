@@ -59,6 +59,7 @@
         }
     }
     .imageContainer{
+        display: none;
         pointer-events: none;
         position: absolute;
         transform: translate(-50%,-50%);
