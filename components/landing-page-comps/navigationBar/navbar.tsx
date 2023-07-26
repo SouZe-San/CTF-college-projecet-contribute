@@ -1,36 +1,27 @@
 // import "@/components/landing-page-comps/navigationBar/navbar.scss"
-import Link from "next/link";
-import "./navbar.scss"
+"use client";
+import BigNav from "./bigNav";
+import SmallNav from "./smallNav";
+import "./navbar.scss";
+import { useEffect, useState } from "react";
 function NavBar() {
+  let [resizeTheWidth, setResizeTheWidth] = useState(true);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      console.log("Hello ji ");
+      window.innerWidth >= 480
+        ? setResizeTheWidth(true)
+        : setResizeTheWidth(false);
+      console.log(resizeTheWidth);
+    });
+
+    // return () =>
+    //   window.removeEventListener("resize", () => console.log("removed"));
+  }, []);
+
   return (
     <nav className="text-white">
-      <div className="logo">
-        <h1>CTF</h1>
-      </div>
-      <div className="btns flex justify-between">
-        <div className="menu">
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/#RewardsSection">Rewards</Link>
-            </li>
-            <li>
-             <Link href="/#TopicsSection">Topics</Link>
-            </li>
-            <li>
-              <Link href="/#RulesSection">Rules</Link>
-            </li>
-            <li>
-              <Link href="/dashboard">Profile</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="cta_btns">
-          <button className=""><Link href="/login">Log in</Link></button>
-        </div>
-      </div>
+      {resizeTheWidth ? <BigNav /> : <SmallNav />}
     </nav>
   );
 }
