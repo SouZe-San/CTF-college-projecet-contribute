@@ -28,17 +28,17 @@ function footer() {
                 </a>
               </span>
               <span>
-                <a className="btnInlineBlock" href="RewardsSection ">
+                <a className="btnInlineBlock" href="#RewardsSection ">
                   Rewards
                 </a>
               </span>
               <span>
-                <a className="btnInlineBlock" href="TopicsSection ">
+                <a className="btnInlineBlock" href="#TopicsSection ">
                   Topics
                 </a>
               </span>
               <span>
-                <a className="btnInlineBlock" href="RulesSection ">
+                <a className="btnInlineBlock" href="#RulesSection ">
                   Rules
                 </a>
               </span>
