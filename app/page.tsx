@@ -13,7 +13,7 @@ import Branding from "@/components/landing-page-comps/noFilterBranding/branding"
 export default function Home() {
 
   return (
-    <main className="">
+    <main>
         <HeroSection/>
         <Timer/>
         <Rewards/>

@@ -28,17 +28,17 @@ function footer() {
                 </a>
               </span>
               <span>
-                <a className="btnInlineBlock" href="RewardsSection ">
+                <a className="btnInlineBlock" href="#RewardsSection ">
                   Rewards
                 </a>
               </span>
               <span>
-                <a className="btnInlineBlock" href="TopicsSection ">
+                <a className="btnInlineBlock" href="#TopicsSection ">
                   Topics
                 </a>
               </span>
               <span>
-                <a className="btnInlineBlock" href="RulesSection ">
+                <a className="btnInlineBlock" href="#RulesSection ">
                   Rules
                 </a>
               </span>
@@ -55,7 +55,7 @@ function footer() {
         </div>
       </div>
       <div className="footerSocialLinkContainer">
-        <a href="">
+        <a  href="/">
           <Image
             src={facebookImg}
             width={40}
@@ -68,7 +68,7 @@ function footer() {
             }}
           />
         </a>
-        <a href="">
+        <a  href="/">
           <Image
             src={twitterImg}
             width={40}
@@ -81,7 +81,7 @@ function footer() {
             }}
           />
         </a>
-        <a href="">
+        <a  href="/">
           <Image
             src={linkedInImg}
             width={40}

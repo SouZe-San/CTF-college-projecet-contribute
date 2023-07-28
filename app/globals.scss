@@ -39,14 +39,13 @@
 
 @font-face {
   font-family: "SeldomScene";
-  src: url("/public/font/SeldomScene/SeldomScene-B6lG.woff") format("woff");
+  src: url("/public/font/SeldomScene/SeldomScene-B6lG.woff") format("woff")
 }
 
-@font-face {
-  font-family: "Monument extended";
-  font-weight: 400;
-  src: url("/public/font/Monument-extended/MonumentExtended-Regular.woff2") format("woff2");
-}
+// @font-face {
+//   font-family: "Monument extended";
+//   src: url("/public/font/MonumentExtended/MonumentExtendedRegular.woff") format("woff");
+// }
 
 @tailwind base;
 @tailwind components;

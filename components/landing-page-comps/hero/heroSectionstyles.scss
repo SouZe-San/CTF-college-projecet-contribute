@@ -1,9 +1,3 @@
-@font-face {
-	font-family: "Monument extended";
-	font-weight: 400;
-	src: url("/public/font/Monument-extended/MonumentExtended-Regular.woff2") format("woff2");
-}
-
 .heroSection {
 	width: 100vw;
 	height: 800px;
@@ -23,7 +17,8 @@
 				font-size: clamp(3rem, 12vw + 1rem, 7.1rem);
 				// font-size: clamp(1.875rem,3.125vw + 1.25rem,4.0625rem);
 				line-height: .9;
-				font-family: "Monument Extended", "Poppins";
+				// font-family: "Monument Extended", "Poppins";
+				font-weight: 400;
 				letter-spacing: -1px;
 				line-height: .9;
 			}
@@ -32,7 +27,7 @@
 				font-size: 1rem;
 				color: rgb(199, 199, 199);
 				margin: 1rem 10px;
-				font-family: "Monument Extended", "Poppins";
+				// font-family: "Monument Extended", "Poppins";
 				letter-spacing: 1px;
 			}
 

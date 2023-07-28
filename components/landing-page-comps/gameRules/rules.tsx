@@ -21,9 +21,7 @@ function Rules() {
     <ul>
         {
             rules.map(
-                (rule,index) => <li className="rule" key={index}>
-                        {rule}
-                </li>
+                (rule,index) => <li className="rule" key={index}>{rule}</li>
             )
         }
     </ul>
