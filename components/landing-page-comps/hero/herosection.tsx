@@ -1,6 +1,6 @@
-import "./heroSectionStyles.scss";
 import Link from "next/link";
 
+import "./heroSectionstyles.scss";
 function HeroSection() {
 
   return (
