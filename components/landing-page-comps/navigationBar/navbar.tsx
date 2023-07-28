@@ -8,11 +8,9 @@ function NavBar() {
   let [resizeTheWidth, setResizeTheWidth] = useState(true);
   useEffect(() => {
     window.addEventListener("resize", () => {
-      console.log("Hello ji ");
       window.innerWidth >= 480
         ? setResizeTheWidth(true)
         : setResizeTheWidth(false);
-      console.log(resizeTheWidth);
     });
 
     // return () =>

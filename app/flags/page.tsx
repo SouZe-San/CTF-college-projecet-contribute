@@ -33,12 +33,13 @@ const getChallenges = async (cookie:string) => {
 
 const page = async () => {
 
-const cookieStore = cookies()
-console.log(cookieStore.getAll())
-const cookData = cookieStore.get('teamId')
+// const cookieStore = cookies()
+// console.log(cookieStore.getAll())
+// const cookData = cookieStore.get('teamId')
 
-const cookie = `${cookData?.name}=${cookData?.value}`
-console.log(cookie)
+// const cookie = `${cookData?.name}=${cookData?.value}`
+// console.log(cookie)
+const cookie = "teamId=TNU2730"
 // Get All Data
   const allChallenges = await getChallenges(cookie)
 

@@ -53,9 +53,10 @@ const getFormId = async (cookie:string) => {
   }
 };
 const page = async () => {
-const cookieStore = cookies()
-const cookData = cookieStore.get('teamId')
-const cookie = `${cookData?.name}=${cookData?.value}`
+// const cookieStore = cookies()
+// const cookData = cookieStore.get('teamId')
+// const cookie = `${cookData?.name}=${cookData?.value}`
+const cookie = "teamId=TNU2730"
 const [scoreData, teamIdData] = await Promise.all([geSore(cookie), getFormId(cookie)]); 
 
   return (

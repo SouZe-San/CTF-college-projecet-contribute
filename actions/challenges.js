@@ -4,9 +4,10 @@ const host = connection.host;
 import { cookies } from "next/headers";
 
 // Get Cookie
-const cookieStore = cookies();
-const cookData = cookieStore.get("teamId");
-const cookie = `${cookData?.name}=${cookData?.value}`;
+// const cookieStore = cookies();
+// const cookData = cookieStore.get("teamId");
+// const cookie = `${cookData?.name}=${cookData?.value}`;
+const cookie = "teamId=TNU2730";
 
 export const flagSubmit = async (challengeId, flag) => {
   const response = await fetch(`${host}/submit`, {

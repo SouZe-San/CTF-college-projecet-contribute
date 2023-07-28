@@ -22,12 +22,12 @@ const InputCard = () => {
   const userSubmit = async () => {
     console.log(teamId, password);
     if (teamId !== "" && password !== "") {
-      const isAuth = await authenticate(teamId, password);
-      if (isAuth === 200) {
-        router.push("/");
-      }
+      // if (isAuth === 200) {
+      // }
       setPassword("");
       setTeamId("");
+      await authenticate(teamId, password);
+      router.push("/");
     } else {
       alert(" Give Valid Inputs :) ");
     }
