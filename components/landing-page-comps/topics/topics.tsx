@@ -2,7 +2,6 @@
 import { ReactNode, useRef, useEffect, useState } from "react";
 import crypotImage from "@/public/compressedape-min.png";
 import Image from "next/image";
-import arrowPng from "@/public/icons8-arrow-100.png";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import img01 from "@/public/topic-images/image-number-one.png";
@@ -10,6 +9,7 @@ import img02 from "@/public/topic-images/image-number-two.jpg";
 import img03 from "@/public/topic-images/image-number-three.webp";
 import img04 from "@/public/topic-images/image-number-four.jpg";
 import img05 from "@/public/topic-images/image-number-five.webp";
+import topicsTBS from "@/public/title-stoked-bg/topicsTitleBgStoked.svg"
 
 import "@/components/landing-page-comps/topics/topicSectionStyles.scss";
 
@@ -55,7 +55,6 @@ const topicAssets = [
     image: img05,
   },
 ];
-const topicSectionTitle = "{/Topics/]";
 
 interface HoverState {
   active: boolean;
@@ -97,18 +96,16 @@ function Rules() {
       ease: "power3",
     });
     //Move cursor
-    console.log("I have been re rendered", number, "times");
-    window.addEventListener("mousemove", (e: MouseEvent) => {
-      const { pageX, pageY } = e;
-      xMoveContainer(pageX);
-      yMoveContainer(pageY);
-    });
+    // console.log("I have been re rendered", number, "times");
+    // window.addEventListener("mousemove", (e: MouseEvent) => {
+    //   const { pageX, pageY } = e;
+    //   xMoveContainer(pageX);
+    //   yMoveContainer(pageY);
+    // });
 
     return () => {
       window.removeEventListener("mousemove", (e: MouseEvent) => {
-        const { pageX, pageY } = e;
-        xMoveContainer(pageX);
-        yMoveContainer(pageY);
+        console.log("hello")
       });
     };
   }, [isHovered]);
@@ -127,7 +124,14 @@ function Rules() {
 
   return (
     <div className="topicsSection" id="TopicsSection">
-      <h1 className="titleOfSection sectionTitle">{topicSectionTitle}</h1>
+      <div className="header">
+        <Image
+          className="bg-title-stoked"
+          src={topicsTBS}
+          alt="competion title svg"
+        />
+        <h1 className="titleOfSection sectionTitle">TOPICS</h1>
+      </div>
 
       <div className="topicContainer">
         {topicNames.map((topicName, index) => {
