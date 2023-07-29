@@ -1,5 +1,6 @@
 import "@/components/landing-page-comps/gameRules/rulesSectionStyles.scss"
-
+import Image from "next/image";
+import rulesBTS from "@/public/title-stoked-bg/rulesTitleBgStoked.svg"
 function Rules() {
   
   const rules =  [
@@ -17,7 +18,15 @@ function Rules() {
   ];
 
   return <div className="rulesSection" id="RulesSection">
-    <h1 className="ruleSectionTitle">Rules</h1>
+    <div className="header">
+        <Image
+          className="bg-title-stoked"
+          src={rulesBTS}
+          alt="competion title svg"
+        />
+    <h1 className="ruleSectionTitle sectionTitle">TERMS & RULES</h1>
+      </div>
+
     <ul>
         {
             rules.map(
